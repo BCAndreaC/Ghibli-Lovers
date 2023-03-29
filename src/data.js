@@ -1,7 +1,7 @@
 // estas funciones son de ejemplo
 
-export const example = () => {
-  return 'example';
+export const example = (director) => {
+  return director;
 };
 
 export const anotherExample = () => {
