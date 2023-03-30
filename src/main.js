@@ -10,8 +10,16 @@ const dataGhibli = data.films
 //declaramos una variable que funciona como array para recuperar de la data solo los directores. map=iterar informacion y flat=para unir la data dispersa en un solo array y debe de llevar por default 1 => = es una nueva forma de  ECMAScript 2015 para realizar funciones dentro de variables se llama arrow function
 // const directorArr = dataGhibli.map(a=>a.people).flat(1)
 // console.log(directorArr);
- const poster20 = dataGhibli.map(b=>b.poster).flat(1)
+ const poster20 = dataGhibli.map(b=>b.poster).flat(1);
+ const releaseDates = dataGhibli.map(b=>b.release_date).flat(1);
+ console.log(releaseDates)
  console.log(poster20);
+
+const sortNewestDates = releaseDates.sort((a, b) => a.release_date > b.release_date ? 1 : -1);
+console.log(sortNewestDates);
+
+const sortOldestDates = releaseDates.sort((a,b)=> a.release_date < b.release_date ? 1 : -1);
+console.log(sortOldestDates);
 
  let imagenes = document.getElementById('root');
 //  if(imagenes){
@@ -29,18 +37,24 @@ const dataGhibli = data.films
 //  }
 
 
-poster20.forEach((aguacate) => {
+dataGhibli.forEach((aguacate) => {
     if (imagenes) {
     let createDiv = document.createElement("div");
     let createImg = document.createElement("img");
+    let createSpan = document.createElement("span");
+    let createH3 = document.createElement("h3");
 
-    createDiv.setAttribute("class", "posterContainer");
-    createImg.innerHTML = aguacate;
-    createImg.setAttribute("src", aguacate);
+    createDiv.setAttribute("class", "filmContainer");
+    createImg.innerHTML = aguacate.poster;
+    createSpan.innerHTML = aguacate.release_date;
+    createH3.innerHTML = aguacate.title;
+    createImg.setAttribute("src", aguacate.poster);
     createImg.setAttribute("class", "aguacate");
 
     imagenes.appendChild(createDiv);
     imagenes.appendChild(createImg);
+    imagenes.appendChild(createSpan);
+    imagenes.appendChild(createH3);
     }
 })
 
@@ -86,3 +100,8 @@ poster20.forEach((aguacate) => {
 // console.log(peopleArr);
 
 // console.log(example, data);
+
+dataGhibli.forEach(function(relase_date, title,director){
+    console.log(relase_date)
+
+})
