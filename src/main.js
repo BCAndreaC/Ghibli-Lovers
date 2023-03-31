@@ -1,24 +1,54 @@
-import { example } from './data.js';
-// import data from './data/lol/lol.js';
-// import data from './data/pokemon/pokemon.js';
-// import data from './data/rickandmorty/rickandmorty.js';
-
+import { sortByNewest, sortByOldest } from './data.js';
 //Nos dimos cuenta que data puede ser cualquier palabra ya que funciona "como una variable"
 import data from './data/ghibli/ghibli.js';
 //Declaramos una variable que recupera los films de la data
 const dataGhibli = data.films
-//declaramos una variable que funciona como array para recuperar de la data solo los directores. map=iterar informacion y flat=para unir la data dispersa en un solo array y debe de llevar por default 1 => = es una nueva forma de  ECMAScript 2015 para realizar funciones dentro de variables se llama arrow function
-const directorArr = dataGhibli.map(a=>a.people).flat(1)
-console.log(directorArr);
+const movieContainer = document.getElementById("movieContainer");
+const sortOptions = document.getElementById('sortOptions');
 
+function displayFilms() {
+  dataGhibli.forEach((film) => {
+    const createFigure = document.createElement("figure");
+    const createImg = document.createElement("img");
+    const createP = document.createElement("p");
+    const createH3 = document.createElement("h3");
 
+    createFigure.setAttribute("class", "filmContainer");
+    createP.innerHTML = film.release_date;
+    createH3.innerHTML = film.title;
+    createImg.setAttribute("src", film.poster);
+    createImg.setAttribute("class", "film");
 
+    createFigure.appendChild(createH3);
+    createFigure.appendChild(createImg);
+    createFigure.appendChild(createP);
+    movieContainer.appendChild(createFigure);
+  })
+}
 
+displayFilms();
 
-//intento de acceder a la data de personajes
-const dataPeople = data.people
+//Funcionalidad de botones por orden de reciente a antiguas.
+// const btnSortNewest = document.getElementById('sortNewest');
+// const btnSortOldest = document.getElementById('sortOldest');
 
-const peopleArr = dataPeople.map(b=>b.age).flat(1)
-console.log(peopleArr);
+function sortByNewestMovies() {
+  const newestOrder = sortByNewest(dataGhibli)
+  movieContainer.innerHTML = '';
+  return displayFilms(newestOrder);
+}
+// btnSortNewest.addEventListener('change', sortByNewestMovies);
 
-console.log(example, data);
+function sortByOldestMovies() {
+  const oldestOrder = sortByOldest(dataGhibli)
+  movieContainer.innerHTML = '';
+  return displayFilms(oldestOrder);
+}
+
+sortOptions.addEventListener('click', function(){
+  if (sortOptions.value === 'newest') {
+    sortByNewestMovies();
+  } else if (sortOptions.value === 'oldest'){
+    sortByOldestMovies();
+  }
+});
