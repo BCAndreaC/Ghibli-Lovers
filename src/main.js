@@ -1,107 +1,54 @@
-import { example } from './data.js';
-// import data from './data/lol/lol.js';
-// import data from './data/pokemon/pokemon.js';
-// import data from './data/rickandmorty/rickandmorty.js';
-
+import { sortByNewest, sortByOldest } from './data.js';
 //Nos dimos cuenta que data puede ser cualquier palabra ya que funciona "como una variable"
 import data from './data/ghibli/ghibli.js';
 //Declaramos una variable que recupera los films de la data
 const dataGhibli = data.films
-//declaramos una variable que funciona como array para recuperar de la data solo los directores. map=iterar informacion y flat=para unir la data dispersa en un solo array y debe de llevar por default 1 => = es una nueva forma de  ECMAScript 2015 para realizar funciones dentro de variables se llama arrow function
-// const directorArr = dataGhibli.map(a=>a.people).flat(1)
-// console.log(directorArr);
- const poster20 = dataGhibli.map(b=>b.poster).flat(1);
- const releaseDates = dataGhibli.map(b=>b.release_date).flat(1);
- console.log(releaseDates)
- console.log(poster20);
+const movieContainer = document.getElementById("movieContainer");
+const sortOptions = document.getElementById('sortOptions');
 
-const sortNewestDates = releaseDates.sort((a, b) => a.release_date > b.release_date ? 1 : -1);
-console.log(sortNewestDates);
+function displayFilms() {
+  dataGhibli.forEach((film) => {
+    const createFigure = document.createElement("figure");
+    const createImg = document.createElement("img");
+    const createP = document.createElement("p");
+    const createH3 = document.createElement("h3");
 
-const sortOldestDates = releaseDates.sort((a,b)=> a.release_date < b.release_date ? 1 : -1);
-console.log(sortOldestDates);
+    createFigure.setAttribute("class", "filmContainer");
+    createP.innerHTML = film.release_date;
+    createH3.innerHTML = film.title;
+    createImg.setAttribute("src", film.poster);
+    createImg.setAttribute("class", "film");
 
- let imagenes = document.getElementById('root');
-//  if(imagenes){
-//     for (let i=0; i<poster20.length;i++){
-//         let crearDiv = document.createElement('div');
-//         let crearImg = document.createElement('img');
+    createFigure.appendChild(createH3);
+    createFigure.appendChild(createImg);
+    createFigure.appendChild(createP);
+    movieContainer.appendChild(createFigure);
+  })
+}
 
-//         //Investigar setAttribute
-//         crearDiv.setAttribute('class','aguacate');
-//         crearImg.innerHTML = poster20[i];
-//         crearImg.setAttribute('src', poster20[i])
-//         imagenes.appendChild(crearImg);
-//         imagenes.appendChild(crearDiv);
-//     }
-//  }
+displayFilms();
 
+//Funcionalidad de botones por orden de reciente a antiguas.
+// const btnSortNewest = document.getElementById('sortNewest');
+// const btnSortOldest = document.getElementById('sortOldest');
 
-dataGhibli.forEach((aguacate) => {
-    if (imagenes) {
-    let createDiv = document.createElement("div");
-    let createImg = document.createElement("img");
-    let createSpan = document.createElement("span");
-    let createH3 = document.createElement("h3");
+function sortByNewestMovies() {
+  const newestOrder = sortByNewest(dataGhibli)
+  movieContainer.innerHTML = '';
+  return displayFilms(newestOrder);
+}
+// btnSortNewest.addEventListener('change', sortByNewestMovies);
 
-    createDiv.setAttribute("class", "filmContainer");
-    createImg.innerHTML = aguacate.poster;
-    createSpan.innerHTML = aguacate.release_date;
-    createH3.innerHTML = aguacate.title;
-    createImg.setAttribute("src", aguacate.poster);
-    createImg.setAttribute("class", "aguacate");
+function sortByOldestMovies() {
+  const oldestOrder = sortByOldest(dataGhibli)
+  movieContainer.innerHTML = '';
+  return displayFilms(oldestOrder);
+}
 
-    imagenes.appendChild(createDiv);
-    imagenes.appendChild(createImg);
-    imagenes.appendChild(createSpan);
-    imagenes.appendChild(createH3);
-    }
-})
-
- 
- var iterator = poster20.values();
- console.log(iterator.next().value);
- console.log(iterator.next().value);
-
-
-
-
-
-
-
-
-//  const btnPrueba = document.getElementById("btnPrueba");
-
-//  function show_image(src) {
-//     var img = document.createElement("img");
-//     img.src = iterator;
-
-//     document.body.appendChild(poster1)
-//  }
-
-//  btnPrueba.addEventListener("click", show_image())
-
-//  function showImage(){
-//     document.write("img src="poster1);
-//  }
- 
-//  const posterImage = document.getElementById("imageTest");
-
-// posterImage.addEventListener("load", () =>
-//  posterImage.innerHTML = poster1);
-
-
-
-
-//intento de acceder a la data de personajes
-// const dataPeople = data.people
-
-// const peopleArr = dataPeople.map(b=>b.age).flat(1)
-// console.log(peopleArr);
-
-// console.log(example, data);
-
-dataGhibli.forEach(function(relase_date, title,director){
-    console.log(relase_date)
-
-})
+sortOptions.addEventListener('click', function(){
+  if (sortOptions.value === 'newest') {
+    sortByNewestMovies();
+  } else if (sortOptions.value === 'oldest'){
+    sortByOldestMovies();
+  }
+});
