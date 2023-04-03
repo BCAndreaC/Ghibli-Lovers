@@ -4,26 +4,39 @@
     <meta charset="utf-8">
     <title>Ghibli Lovers</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
   <body>
+    <header class="header">
+      <nav class="menu">
+      <figure class="logoFigure">
+        <img src="./assets/logo.png" alt="Logo from the movie Spirited Away" class="logoImage">
+      </figure>
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="movies.html" class="nav-link">Movies</a></li>
+          <li class="nav-item"><a href="" class="nav-link"></a>Characters</li>
+        </ul>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </nav>
+    </header>
     <h1>Ghibli Lovers</h1>
       <!-- <button id="sortNewest">Newest</button>
       <button id="sortOldest">Oldest</button> -->
     <main id="main">
-      <nav class="menu">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="movies.html">Movies</a></li>
-          <li><a href=""></a>Characters</li>
-        </ul>
-      </nav>
       <section>
         <article>
+          <i class="fa-solid fa-sort-down"></i>
           <select name="sortOptions" id="sortOptions">
             <option value="Order" class="sortOptions">Order</option>
             <option value="newest" class="sortOptions">Newest</option>
             <option value="oldest" class="sortOptions">Oldest</option>
           </select>
+          <i class="fa-solid fa-sliders"></i>
           <select name="director" id="">
             <option value="" class="directorFilter"></option>
             <option value="" class="directorFilter"></option>
