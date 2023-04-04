@@ -39,10 +39,12 @@ function displayFilms() {
     createP.innerHTML = film.release_date;
     createH3.innerHTML = film.title;
     createImg.setAttribute("src", film.poster);
-    createImg.setAttribute("class", "film");
+    createImg.setAttribute("class", "filmPoster");
+    createH3.setAttribute("class", "filmTitle");
+    createP.setAttribute("class", "filmYear")
 
-    createFigure.appendChild(createH3);
     createFigure.appendChild(createImg);
+    createFigure.appendChild(createH3);
     createFigure.appendChild(createP);
     movieContainer.appendChild(createFigure);
   })

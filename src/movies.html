@@ -4,18 +4,23 @@
     <meta charset="utf-8">
     <title>Ghibli Lovers</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mobile.css">
+    <link rel="stylesheet" href="tablet.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
   </head>
   <body>
     <header class="header">
       <nav class="menu">
       <figure class="logoFigure">
-        <img src="./assets/logo.png" alt="Logo from the movie Spirited Away" class="logoImage">
+        <a href="index"><img src="./assets/logo.png" alt="Logo from the movie Spirited Away" class="logoImage"></a>
       </figure>
         <ul class="nav-menu">
           <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
           <li class="nav-item"><a href="movies.html" class="nav-link">Movies</a></li>
-          <li class="nav-item"><a href="" class="nav-link"></a>Characters</li>
+          <li class="nav-item"><a href="characters.html" class="nav-link">Characters</a></li>
         </ul>
         <div class="hamburger">
           <span class="bar"></span>
@@ -24,32 +29,42 @@
         </div>
       </nav>
     </header>
-    <h1>Ghibli Lovers</h1>
+    <h1 class="titleWebpage">Ghibli Lovers</h1>
       <!-- <button id="sortNewest">Newest</button>
       <button id="sortOldest">Oldest</button> -->
     <main id="main">
       <section>
-        <article>
-          <i class="fa-solid fa-sort-down"></i>
-          <select name="sortOptions" id="sortOptions">
-            <option value="Order" class="sortOptions">Order</option>
-            <option value="newest" class="sortOptions">Newest</option>
-            <option value="oldest" class="sortOptions">Oldest</option>
+        <article class="sortFilterContainer">
+          <i class="fa-solid fa-sort-down" id="sortArrow"></i>
+          <select name="sort" id="sortOptions" class="btnBar sortSelect">
+            <option value="sort" class="btnBar">Sort</option>
+            <option value="newest" class="btnBar">Newest</option>
+            <option value="oldest" class="btnBar">Oldest</option>
           </select>
-          <i class="fa-solid fa-sliders"></i>
-          <select name="director" id="">
-            <option value="" class="directorFilter"></option>
-            <option value="" class="directorFilter"></option>
-            <option value="" class="directorFilter"></option>
-            <option value="" class="directorFilter"></option>
-            <option value="" class="directorFilter"></option>
-            <option value="" class="directorFilter"></option>
+          
+          <i class="fa-solid fa-sliders" id="filterSlider"></i>
+          <select name="director" id="" class="btnBar directorFilter">
+            <option value="filter" class="btnBar">Filter</option>
+            <option value="Hayao Miyazaki" class="btnBar">Hayao Miyazaki</option>
+            <option value="Isao Takahata" class="btnBar">Isao Takahata</option>
+            <option value="Yoshifumi Kondō" class="btnBar">Yoshifumi Kondō</option>
+            <option value="Hiroyuki Morita" class="btnBar">Hiroyuki Morita</option>
+            <option value="Gōro Miyazaki" class="btnBar">Gōro Miyazaki</option>
+            <option value="Hiromasa Yonebayashi" class="btnBar">Hiromasa Yonebayashi</option>
           </select>
         </article>
       </section>
-      <section id="movieContainer">
+      <section class="movieContainer" id="movieContainer">
       </section>
     </main>
+    <footer class="footer">
+      <p><a href="https://github.com/thatmare" class="linkGitHub">thatmare</a></p>
+      <i class="fa-brands fa-github-alt fa-beat fa-2xl"></i>
+      <p><a href="https://github.com/BCAndreaC" class="linkGitHub">AndreaC</a></p>
+      <i class="fa-brands fa-instagram fa-2xl"></i>
+      <i class="fa-brands fa-facebook fa-2xl"></i>
+      <i class="fa-brands fa-twitter fa-2xl"></i>    
+    </footer>
     <script src="main.js" type="module"></script>
   </body>
 </html>

@@ -1,21 +1,37 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+    font-family: 'Quicksand', sans-serif;
+}
 
 body{
-margin: 0;
-padding: 0;
-height: 100vh;
-
+    margin: 0;
+    padding: 0;
+    height: 100vh;
 }
 
 main{
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 }
 
-h1{
+.logoImage{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    left: 91%;
+    top: 11px;
+}
+
+.titleWebpage {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,6 +41,7 @@ h1{
     font-weight: 700;
 }
 
+/* Carrusel de imágenes */
 .slider{
     width: 660px;
     height: 440px;
@@ -109,29 +126,10 @@ margin-left: 0;
 #radio8:checked ~ .first{
     margin-left: -140%;
 }
-
-.logoImage{
-    position: absolute;
-    width: 80px;
-    height: 80px;
-    left: 91%;
-    top: 11px;
-}
+/* Fin de carrusel */
 
 /* CSS menu de hamburguesa */
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html{
-    font-size: 62.5%;
-    font-family: 'Quicksand', sans-serif;
-}
-
-li{
+li {
     list-style: none;
     background-color: #012B99;
     color: white;
@@ -143,7 +141,7 @@ li{
 li:hover{
     color: #012B99;
     background-color: white;
-    border: .1px solid #012B99;
+    border: .2px solid #012B99;
     font-weight: 600;
 }
 
@@ -188,63 +186,19 @@ li:hover{
     color: white;
     text-decoration: none;
     font-size: 2.5rem;
+    width: 2rem;
+    height: 1rem;
+    border-radius: 10px;
 }
 
 .nav-link:hover{
     color: #012B99;
     background-color: white;
+    font-size: 2.5rem;
+    font-weight: 600;
 }
 
-
-@media only screen and (max-width: 768px) {
-    .nav-menu {
-        position: fixed;
-        left: -100%;
-        top: 5rem;
-        flex-direction: column;
-        background-color: #012B99;
-        color: white;
-        width: 100%;
-        border-radius: 10px;
-        text-align: center;
-        transition: 0.3s;
-        box-shadow:
-            0 10px 27px rgba(0, 0, 0, 0.05);
-    }
-
-    .nav-link{
-        font-size: 1.6rem;
-        font-weight: 400;
-        color: white;
-        text-decoration: none;
-    }
-
-    .nav-menu.active {
-        left: 0;
-    }
-
-    .nav-item {
-        margin: 2.5rem 0;
-    }
-
-    .hamburger {
-        display: block;
-        cursor: pointer;
-    }
-
-    .hamburger.active .bar:nth-child(2) {
-        opacity: 0;
-    }
-
-    .hamburger.active .bar:nth-child(1) {
-        transform: translateY(16px) rotate(45deg);
-    }
-
-    .hamburger.active .bar:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-    }
-}
-
+/* Mensaje de bienvenida */
 .container_welcomeMessage {
     margin-top: 6rem;
     padding: 0 25%;
@@ -264,6 +218,89 @@ li:hover{
     color: #012B99;
 }
 
+/* Botón de ordenado y filtrado en página de Movies */
+.btnBar {
+    background-color: #012B99;
+    color: white;
+    width: 40vw;
+    height: 6vh;
+    -webkit-appearance: none;
+    appearance: none;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.6rem;
+    padding-left: 2rem;
+    border: none;
+}
+
+.sortSelect {
+    border-radius: 10px 0px 0px 10px;
+}
+
+.directorFilter {
+    border-radius: 0px 10px 10px 0px;
+}
+
+.sortFilterContainer{
+    position: relative;
+}
+
+/* Íconos de filtrado y de orden */
+#filterSlider {
+    position: absolute;
+    color: white;
+    margin-top: 1rem;
+    right: 0%;
+    font-size: 2rem;
+}
+
+#sortArrow{
+    position: absolute;
+    color: white;
+    margin-top: .5rem;
+    right: 50%;
+    font-size: 2rem;
+}
+
+/* Contenedor de películas */
+.movieContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    margin: 4% 2%;
+}
+
+/* Presentación de las películas (poster, título y fecha de lanzamiento) */
+.filmContainer {
+    width: 35rem;
+    height: 35rem;
+    text-align: center;
+}
+
+.filmPoster{
+    width: 24rem;
+    height: 24rem;
+    object-fit: contain;
+    /* border-radius: 100px; */
+    filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.25));
+    /* clip-path: inset(0 15% 0 15% round 15%); */
+    margin-bottom: 2rem;
+}
+
+.filmTitle{
+    font-size: 2rem;
+    color: #012B99;
+    font-weight: 800;
+}
+
+.filmYear{
+    font-size: 2rem;
+    color: #012B99;
+    font-weight: 500;
+}
+
+/* Pie de página */
 .footer {
     background-color: #012B99;
     color: white;
@@ -277,7 +314,6 @@ li:hover{
 }
 
 i {
-    /* padding: 1rem 30vw 1rem; */
     margin: 10px;
 }
 
