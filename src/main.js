@@ -18,6 +18,7 @@ function mobileMenu() {
 }
 
 // Función de despliegue de películas
+
 function displayFilms() {
   dataGhibli.forEach((film) => {
     const createFigure = document.createElement("figure");
@@ -42,11 +43,13 @@ function displayFilms() {
 
 displayFilms();
 
+
 function sortByNewestMovies() {
   const newestOrder = sortByNewest(dataGhibli)
   movieContainer.innerHTML = '';
   return displayFilms(newestOrder);
 }
+
 
 function sortByOldestMovies() {
   const oldestOrder = sortByOldest(dataGhibli)
