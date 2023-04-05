@@ -4,24 +4,93 @@
     <meta charset="utf-8">
     <title>Ghibli Lovers</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mobile.css">
+    <link rel="stylesheet" href="tablet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
   </head>
   <body>
-    <h1>Ghibli Lovers</h1>
-    <nav class="menu">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="movies.html">Movies</a></li>
-        <li><a href=""></a>Characters</li>
-      </ul>
-    </nav>
-    <main id="main">
-      <figure>
-        <img src="" alt="">
+    <header class="header">
+      <nav class="menu">
+      <figure class="logoFigure">
+        <a href="index.html"><img src="./assets/logo.png" alt="Logo from the movie Spirited Away" class="logoImage"></a>
       </figure>
-      <article>
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="movies.html" class="nav-link">Movies</a></li>
+          <li class="nav-item"><a href="characters.html" class="nav-link"></a>Characters</li>
+        </ul>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </nav>
+    </header>
+    <h1 class="titleWebpage">Ghibli Lovers</h1>
+    <main id="main">
+      <figure class="slider">
+        <div class="slides">
+          <input type="radio" name="radio-btn" id="radio1">
+          <input type="radio" name="radio-btn" id="radio2">
+          <input type="radio" name="radio-btn" id="radio3">
+          <input type="radio" name="radio-btn" id="radio4">
+          <input type="radio" name="radio-btn" id="radio5">
+          <input type="radio" name="radio-btn" id="radio6">
+          <input type="radio" name="radio-btn" id="radio7">
+          <input type="radio" name="radio-btn" id="radio8">
 
+          <div class="slide first">
+            <img src="./assets/1.jpg" alt="Collage-Ghibli">
+          </div>
+          <div class="slide">
+            <img src="./assets/2.jpg" alt="Collage-Ghibli">
+          </div>
+          <div class="slide">
+            <img src="./assets/3.jpg" alt="Collage-Ghibli">
+          </div>
+          <div class="slide">
+            <img src="./assets/4.jpg" alt="Collage-Ghibli">
+          </div>
+          <div class="slide">
+            <img src="./assets/5.jpg" alt="Collage-Ghibli">
+          </div>
+          <div class="slide">
+            <img src="./assets/6.jpg" alt="Collage-Ghibli">
+          </div>
+          <div class="slide">
+            <img src="./assets/7.jpg" alt="Collage-Ghibli">
+          </div>
+          <div class="slide">
+            <img src="./assets/8.jpg" alt="Collage-Ghibli">
+          </div>
+        </div>
+          <div class="navigation-manual">
+            <label for="radio1" class="manual-btn"></label>
+            <label for="radio2" class="manual-btn"></label>
+            <label for="radio3" class="manual-btn"></label>
+            <label for="radio4" class="manual-btn"></label>
+            <label for="radio5" class="manual-btn"></label>
+            <label for="radio6" class="manual-btn"></label>
+            <label for="radio7" class="manual-btn"></label>
+            <label for="radio8" class="manual-btn"></label>
+          </div>
+      </figure>
+      <article class="container_welcomeMessage">
+        <h3 class="welcomeTitleh3">Welcome to Ghibli Lovers</h3>
+        <p class="welcomeMessage">Explore the movies and characters of one of the most famous animation studios.</p>
       </article>
     </main>
+    <footer class="footer">
+      <p><a href="https://github.com/thatmare" class="linkGitHub">thatmare</a></p>
+      <i class="fa-brands fa-github-alt fa-beat fa-2xl"></i>
+      <p><a href="https://github.com/BCAndreaC" class="linkGitHub">AndreaC</a></p>
+      <i class="fa-brands fa-instagram fa-2xl"></i>
+      <i class="fa-brands fa-facebook fa-2xl"></i>
+      <i class="fa-brands fa-twitter fa-2xl"></i>    
+    </footer>
     <script src="main.js" type="module"></script>
   </body>
 </html>

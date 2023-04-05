@@ -1,0 +1,323 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+    font-family: 'Quicksand', sans-serif;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+main{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+}
+
+.logoImage{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    left: 91%;
+    top: 11px;
+}
+
+.titleWebpage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1% 6%;
+    font-size: 5rem;
+    color: #012B99;
+    font-weight: 700;
+}
+
+/* Carrusel de imágenes */
+.slider{
+    width: 660px;
+    height: 440px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.slides{
+    width: 500%;
+    height: 500px;
+    display: flex;
+
+}
+
+.slides input {
+    display: none;
+}
+
+.slide{
+    width: 20%;
+    transition: 2s;
+}
+
+.slide img {
+    width: 660px;
+    height: 500px;
+    object-fit: contain;
+}
+
+.navigation-manual{
+    position: absolute;
+    width: 660px;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+}
+
+.manual-btn{
+    border: 2px solid #012B99;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.manual-btn:not(:last-child){
+    margin-right: 20px;
+}
+
+.manual-btn:hover{
+    background: #012B99;
+}
+
+#radio1:checked ~ .first{
+margin-left: 0;
+}
+
+#radio2:checked ~ .first{
+    margin-left: -20%;
+}
+
+#radio3:checked ~ .first{
+    margin-left: -40%;
+}
+
+#radio4:checked ~ .first{
+    margin-left: -60%;
+}
+
+#radio5:checked ~ .first{
+    margin-left: -80%;
+}
+
+#radio6:checked ~ .first{
+    margin-left: -100%;
+}
+
+#radio7:checked ~ .first{
+    margin-left: -120%;
+}
+
+#radio8:checked ~ .first{
+    margin-left: -140%;
+}
+/* Fin de carrusel */
+
+/* CSS menu de hamburguesa */
+li {
+    list-style: none;
+    background-color: #012B99;
+    color: white;
+    border-radius: 36px;
+    padding: 2% 6%;
+    font-weight: 600;
+}
+
+li:hover{
+    color: #012B99;
+    background-color: white;
+    border: .2px solid #012B99;
+    font-weight: 600;
+}
+
+
+.menu{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    margin-top: 1rem;
+    font-size: 16px;
+}
+
+.hamburger{
+    display:none ;
+}
+
+.bar {
+    border-radius: 10px;
+    display: block;
+    width: 40px;
+    height: 6px;
+    margin: 6px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #012B99;
+}
+
+.nav-menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 2.5rem;
+}
+
+.nav-item {
+    margin-left: 5rem;
+}
+
+.nav-link{
+    color: white;
+    text-decoration: none;
+    font-size: 2.5rem;
+    width: 2rem;
+    height: 1rem;
+    border-radius: 10px;
+}
+
+.nav-link:hover{
+    color: #012B99;
+    background-color: white;
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+/* Mensaje de bienvenida */
+.container_welcomeMessage {
+    margin-top: 6rem;
+    padding: 0 25%;
+}
+
+.welcomeTitleh3 {
+    font-weight: 600;
+    font-size: 4.4rem;
+    text-align: center;
+    color: #012B99;
+}
+
+.welcomeMessage {
+    font-weight: 500;
+    font-size: 3.2rem;
+    text-align: center;
+    color: #012B99;
+}
+
+/* Botón de ordenado y filtrado en página de Movies */
+.btnBar {
+    background-color: #012B99;
+    color: white;
+    width: 40vw;
+    height: 6vh;
+    -webkit-appearance: none;
+    appearance: none;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.6rem;
+    padding-left: 2rem;
+    border: none;
+}
+
+.sortSelect {
+    border-radius: 10px 0px 0px 10px;
+}
+
+.directorFilter {
+    border-radius: 0px 10px 10px 0px;
+}
+
+.sortFilterContainer{
+    position: relative;
+}
+
+/* Íconos de filtrado y de orden */
+#filterSlider {
+    position: absolute;
+    color: white;
+    margin-top: 1rem;
+    right: 0%;
+    font-size: 2rem;
+}
+
+#sortArrow{
+    position: absolute;
+    color: white;
+    margin-top: .5rem;
+    right: 50%;
+    font-size: 2rem;
+}
+
+/* Contenedor de películas */
+.movieContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    margin: 4% 2%;
+}
+
+/* Presentación de las películas (poster, título y fecha de lanzamiento) */
+.filmContainer {
+    width: 35rem;
+    height: 35rem;
+    text-align: center;
+}
+
+.filmPoster{
+    width: 24rem;
+    height: 24rem;
+    object-fit: contain;
+    /* border-radius: 100px; */
+    filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.25));
+    /* clip-path: inset(0 15% 0 15% round 15%); */
+    margin-bottom: 2rem;
+}
+
+.filmTitle{
+    font-size: 2rem;
+    color: #012B99;
+    font-weight: 800;
+}
+
+.filmYear{
+    font-size: 2rem;
+    color: #012B99;
+    font-weight: 500;
+}
+
+/* Pie de página */
+.footer {
+    background-color: #012B99;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 30vw 1rem;
+    height: 8rem;
+    margin-top: 2%;
+}
+
+i {
+    margin: 10px;
+}
+
+.linkGitHub {
+    color: white;
+}

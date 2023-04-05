@@ -6,6 +6,19 @@ const dataGhibli = data.films
 const movieContainer = document.getElementById("movieContainer");
 const sortOptions = document.getElementById('sortOptions');
 
+//Función de menú hamburger
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
+
+hamburger.addEventListener("click", mobileMenu);
+
+function mobileMenu() {
+  hamburger.classList.toggle("active");
+  navMenu.classList.toggle("active");
+}
+
+// Función de despliegue de películas
+
 function displayFilms() {
   dataGhibli.forEach((film) => {
     const createFigure = document.createElement("figure");
@@ -17,10 +30,12 @@ function displayFilms() {
     createP.innerHTML = film.release_date;
     createH3.innerHTML = film.title;
     createImg.setAttribute("src", film.poster);
-    createImg.setAttribute("class", "film");
+    createImg.setAttribute("class", "filmPoster");
+    createH3.setAttribute("class", "filmTitle");
+    createP.setAttribute("class", "filmYear")
 
-    createFigure.appendChild(createH3);
     createFigure.appendChild(createImg);
+    createFigure.appendChild(createH3);
     createFigure.appendChild(createP);
     movieContainer.appendChild(createFigure);
   })
@@ -28,16 +43,13 @@ function displayFilms() {
 
 displayFilms();
 
-//Funcionalidad de botones por orden de reciente a antiguas.
-// const btnSortNewest = document.getElementById('sortNewest');
-// const btnSortOldest = document.getElementById('sortOldest');
 
 function sortByNewestMovies() {
   const newestOrder = sortByNewest(dataGhibli)
   movieContainer.innerHTML = '';
   return displayFilms(newestOrder);
 }
-// btnSortNewest.addEventListener('change', sortByNewestMovies);
+
 
 function sortByOldestMovies() {
   const oldestOrder = sortByOldest(dataGhibli)
