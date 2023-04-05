@@ -6,28 +6,18 @@ const dataGhibli = data.films
 const movieContainer = document.getElementById("movieContainer");
 const sortOptions = document.getElementById('sortOptions');
 
-//Funcion de menu hamburger
-
+//Función de menú hamburger
 const hamburger = document.querySelector(".hamburger");
-console.log("Esta es la variable " + hamburger);
 const navMenu = document.querySelector(".nav-menu");
 
 hamburger.addEventListener("click", mobileMenu);
 
-const navLink = document.querySelectorAll(".nav-link");
-
-navLink.forEach(n => n.addEventListener("click", closeMenu));
-
-function closeMenu() {
-    hamburger.classList.remove("active");
-    navMenu.classList.remove("active");
-}
-
 function mobileMenu() {
-    hamburger.classList.toggle("active");
-    navMenu.classList.toggle("active");
+  hamburger.classList.toggle("active");
+  navMenu.classList.toggle("active");
 }
 
+// Función de despliegue de películas
 function displayFilms() {
   dataGhibli.forEach((film) => {
     const createFigure = document.createElement("figure");
@@ -52,16 +42,11 @@ function displayFilms() {
 
 displayFilms();
 
-//Funcionalidad de botones por orden de reciente a antiguas.
-// const btnSortNewest = document.getElementById('sortNewest');
-// const btnSortOldest = document.getElementById('sortOldest');
-
 function sortByNewestMovies() {
   const newestOrder = sortByNewest(dataGhibli)
   movieContainer.innerHTML = '';
   return displayFilms(newestOrder);
 }
-// btnSortNewest.addEventListener('change', sortByNewestMovies);
 
 function sortByOldestMovies() {
   const oldestOrder = sortByOldest(dataGhibli)
@@ -76,4 +61,3 @@ sortOptions.addEventListener('click', function(){
     sortByOldestMovies();
   }
 });
-
