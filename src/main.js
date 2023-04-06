@@ -4,9 +4,34 @@ import data from './data/ghibli/ghibli.js';
 //Declaramos una variable que recupera los films de la data
 const dataGhibli = data.films
 
-const movieContainer = document.getElementById("movieContainer");
-const sortOptions = document.getElementById('sortOptions');
-const filterOptions = document.getElementById('directorByFilter');
+const characterContainer = document.getElementById('characterContainer')
+const people = dataGhibli.flatMap(movie => movie.people);
+
+function displayCharacters(filmCharacters){
+  filmCharacters.forEach((people) => {
+    const createFigure = document.createElement("figure");
+    const createImg = document.createElement("img");
+    const createName = document.createElement("p");
+    const createAge = document.createElement("p");
+    const createGender = document.createElement("p");
+
+    createFigure.setAttribute("class", "filmContainer");
+    createImg.setAttribute("src", people.img);
+    createImg.setAttribute("class", "peopleImg");
+    createName.innerHTML = people.name;
+    createName.setAttribute("class", "characterName");
+    createAge.innerHTML = people.age;
+    createAge.setAttribute("class", "characterAge");
+    createGender.innerHTML = people.gender;
+    createGender.setAttribute("class", "characterGender");
+    
+    createFigure.appendChild(createImg);
+    createFigure.appendChild(createName);
+    createFigure.appendChild(createAge);
+    createFigure.appendChild(createGender);
+    characterContainer.appendChild(createFigure);
+  })
+}
 
 //Función de menú hamburger
 const hamburger = document.querySelector(".hamburger");
@@ -18,6 +43,10 @@ function mobileMenu() {
   hamburger.classList.toggle("active");
   navMenu.classList.toggle("active");
 }
+
+const movieContainer = document.getElementById("movieContainer");
+const sortOptions = document.getElementById('sortOptions');
+const filterOptions = document.getElementById('directorByFilter');
 
 // Función de despliegue de películas
 function displayFilms(films) {
@@ -42,8 +71,14 @@ function displayFilms(films) {
   })
 }
 
-displayFilms(dataGhibli);
+// const btnCharacters = document.getElementsByClassName("btn-characters");
+// btnCharacters.addEventListener("click", displayCharacters(people));
 
+// const btnMovies = document.getElementsByClassName("btn-movies");
+// btnMovies.addEventListener("click", displayFilms(dataGhibli));
+
+// displayFilms(dataGhibli);
+// displayCharacters(people);
 
 function sortByNewestMovies() {
   const newestOrder = sortByNewest(dataGhibli)
