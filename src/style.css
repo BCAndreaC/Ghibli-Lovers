@@ -321,3 +321,12 @@ i {
 .linkGitHub {
     color: white;
 }
+
+.characterContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    margin: 4% 2%;
+}
