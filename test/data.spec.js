@@ -1,5 +1,5 @@
-import { sortByNewest, sortByOldest } from '../src/data.js';
-import { dataMock, dataMockOrder } from './mockdata.js';
+import { sortByNewest, sortByOldest, filterDirector } from '../src/data.js';
+import { dataMock, dataMockOrder, /*dataMockFilteredByDirector*/ } from './mockdata.js';
 
 
 
@@ -23,13 +23,18 @@ describe('sortByOldest', () => {
   });
 });
 
+describe('filterDirector', () => {
+  const directorSample = 'Director A';
+  const films = [    { title: 'Film A', director: 'Director A' },    { title: 'Film B', director: 'Director B' },    { title: 'Film C', director: 'Director A' },    { title: 'Film D', director: 'Director C' },  ];
+  const expectedFilms = [      { title: 'Film A', director: 'Director A' },      { title: 'Film C', director: 'Director A' },    ];
 
-// describe('anotherExample', () => {
-//   it('is a function', () => {
-//     expect(typeof anotherExample).toBe('function');
-//   });
+  it('is a function', () => {
+    expect(typeof filterDirector).toBe('function');
+  });  
 
-//   it('returns `anotherExample`', () => {
-//     expect(anotherExample()).toBe('OMG');
-//   });
-// });
+  it('must return only Director A', () => {
+    expect(filterDirector(films, directorSample)).toEqual(expectedFilms);
+  })
+}); 
+
+
