@@ -42,6 +42,13 @@ main{
     font-weight: 700;
 }
 
+/* Contenedor de Home (carrusel y mensaje de bienvenida) */
+.homeWrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 /* Carrusel de imágenes */
 .slider{
     width: 660px;
@@ -219,7 +226,29 @@ li:hover{
     color: #012B99;
 }
 
-/* Botón de ordenado y filtrado en página de Movies */
+/* Inicio de página de Movies */
+.movieWrap {
+    /* display: none; */
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+    /* Botón de ordenado y filtrado en página de Movies */
+.sortSelect, .sortCharacters {
+    border-radius: 10px 0px 0px 10px;
+}
+
+.directorFilter, .genderFilter {
+    border-radius: 0px 10px 10px 0px;
+}
+
+.sortFilterContainer{
+    position: relative;
+}
+
 .btnBar {
     background-color: #012B99;
     color: white;
@@ -233,19 +262,7 @@ li:hover{
     border: none;
 }
 
-.sortSelect {
-    border-radius: 10px 0px 0px 10px;
-}
-
-.directorFilter {
-    border-radius: 0px 10px 10px 0px;
-}
-
-.sortFilterContainer{
-    position: relative;
-}
-
-/* Íconos de filtrado y de orden */
+    /* Íconos de filtrado y de orden */
 #filterSlider {
     position: absolute;
     color: white;
@@ -262,7 +279,7 @@ li:hover{
     font-size: 2rem;
 }
 
-/* Contenedor de películas */
+    /* Contenedor de películas */
 .movieContainer {
     display: flex;
     flex-direction: row;
@@ -272,11 +289,12 @@ li:hover{
     margin: 4% 2%;
 }
 
-/* Presentación de las películas (poster, título y fecha de lanzamiento) */
+    /* Presentación de las películas (poster, título y fecha de lanzamiento) */
 .filmContainer {
     width: 35rem;
     height: 35rem;
     text-align: center;
+    margin-bottom: 7rem;
 }
 
 .filmPoster{
@@ -295,10 +313,30 @@ li:hover{
     font-weight: 800;
 }
 
-.filmYear{
+.filmInformation{
     font-size: 2rem;
     color: #012B99;
     font-weight: 500;
+}
+/* Fin de página de Movies */
+
+/* Página de personajes */
+.characterWrap {
+    /* display: none; */
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.characterContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    margin: 4% 2%;
 }
 
 /* Pie de página */
@@ -320,13 +358,4 @@ i {
 
 .linkGitHub {
     color: white;
-}
-
-.characterContainer {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    margin: 4% 2%;
 }
