@@ -12,15 +12,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
   </head>
   <body>
+    <!-- Barra para navegar/hamburguesa -->
     <header class="header">
       <nav class="menu">
       <figure class="logoFigure">
         <a href="index.html"><img src="./assets/logo.png" alt="Logo from the movie Spirited Away" class="logoImage"></a>
       </figure>
         <ul class="nav-menu">
-          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-          <li class="nav-item btn-movies"><a href="movies.html" class="nav-link">Movies</a></li>
-          <li class="nav-item btn-characters" ><a href="characters.html" class="nav-link">Characters</a></li>
+          <li class="nav-item btn-home" id="btn-home">Home</li>
+          <li class="nav-item btn-movies" id="btn-movies">Movies</li>
+          <li class="nav-item btn-characters" id="btn-characters">Characters</li>
         </ul>
         <div class="hamburger">
           <span class="bar"></span>
@@ -29,59 +30,117 @@
         </div>
       </nav>
     </header>
-    <h1 class="titleWebpage">Ghibli Lovers</h1>
+    <!-- Contenedor de la pagina -->
     <main id="main">
-      <figure class="slider">
-        <div class="slides">
-          <input type="radio" name="radio-btn" id="radio1">
-          <input type="radio" name="radio-btn" id="radio2">
-          <input type="radio" name="radio-btn" id="radio3">
-          <input type="radio" name="radio-btn" id="radio4">
-          <input type="radio" name="radio-btn" id="radio5">
-          <input type="radio" name="radio-btn" id="radio6">
-          <input type="radio" name="radio-btn" id="radio7">
-          <input type="radio" name="radio-btn" id="radio8">
+      <h1 class="titleWebpage">Ghibli Lovers</h1>
+      <div class="homeWrap" id="homeWrap">
+        <!-- Carrusel en página de bienvenida -->
+        <figure class="slider" id="slider">
+          <div class="slides">
+            <input type="radio" name="radio-btn" id="radio1">
+            <input type="radio" name="radio-btn" id="radio2">
+            <input type="radio" name="radio-btn" id="radio3">
+            <input type="radio" name="radio-btn" id="radio4">
+            <input type="radio" name="radio-btn" id="radio5">
+            <input type="radio" name="radio-btn" id="radio6">
+            <input type="radio" name="radio-btn" id="radio7">
+            <input type="radio" name="radio-btn" id="radio8">
 
-          <div class="slide first">
-            <img src="./assets/1.jpg" alt="Collage-Ghibli">
+            <div class="slide first">
+              <img src="./assets/1.jpg" alt="Collage-Ghibli">
+            </div>
+            <div class="slide">
+              <img src="./assets/2.jpg" alt="Collage-Ghibli">
+            </div>
+            <div class="slide">
+              <img src="./assets/3.jpg" alt="Collage-Ghibli">
+            </div>
+            <div class="slide">
+              <img src="./assets/4.jpg" alt="Collage-Ghibli">
+            </div>
+            <div class="slide">
+              <img src="./assets/5.jpg" alt="Collage-Ghibli">
+            </div>
+            <div class="slide">
+              <img src="./assets/6.jpg" alt="Collage-Ghibli">
+            </div>
+            <div class="slide">
+              <img src="./assets/7.jpg" alt="Collage-Ghibli">
+            </div>
+            <div class="slide">
+              <img src="./assets/8.jpg" alt="Collage-Ghibli">
+            </div>
           </div>
-          <div class="slide">
-            <img src="./assets/2.jpg" alt="Collage-Ghibli">
-          </div>
-          <div class="slide">
-            <img src="./assets/3.jpg" alt="Collage-Ghibli">
-          </div>
-          <div class="slide">
-            <img src="./assets/4.jpg" alt="Collage-Ghibli">
-          </div>
-          <div class="slide">
-            <img src="./assets/5.jpg" alt="Collage-Ghibli">
-          </div>
-          <div class="slide">
-            <img src="./assets/6.jpg" alt="Collage-Ghibli">
-          </div>
-          <div class="slide">
-            <img src="./assets/7.jpg" alt="Collage-Ghibli">
-          </div>
-          <div class="slide">
-            <img src="./assets/8.jpg" alt="Collage-Ghibli">
-          </div>
-        </div>
-          <div class="navigation-manual">
-            <label for="radio1" class="manual-btn"></label>
-            <label for="radio2" class="manual-btn"></label>
-            <label for="radio3" class="manual-btn"></label>
-            <label for="radio4" class="manual-btn"></label>
-            <label for="radio5" class="manual-btn"></label>
-            <label for="radio6" class="manual-btn"></label>
-            <label for="radio7" class="manual-btn"></label>
-            <label for="radio8" class="manual-btn"></label>
-          </div>
-      </figure>
-      <article class="container_welcomeMessage">
-        <h3 class="welcomeTitleh3">Welcome to Ghibli Lovers</h3>
-        <p class="welcomeMessage">Explore the movies and characters of one of the most famous animation studios.</p>
-      </article>
+            <div class="navigation-manual">
+              <label for="radio1" class="manual-btn"></label>
+              <label for="radio2" class="manual-btn"></label>
+              <label for="radio3" class="manual-btn"></label>
+              <label for="radio4" class="manual-btn"></label>
+              <label for="radio5" class="manual-btn"></label>
+              <label for="radio6" class="manual-btn"></label>
+              <label for="radio7" class="manual-btn"></label>
+              <label for="radio8" class="manual-btn"></label>
+            </div>
+        </figure>
+        <!-- Fin de carrusel  -->
+        
+        <article class="container_welcomeMessage" id="container_welcomeMessage">
+          <h3 class="welcomeTitleh3">Welcome to Ghibli Lovers</h3>
+          <p class="welcomeMessage">Explore the movies and characters of one of the most famous animation studios.</p>
+        </article>
+      </div>
+      
+      <!-- Barra section para Movies -->
+      <div class="movieWrap" id="movieWrap">
+        <!--  Section para sort y filter en Movies -->
+        <section>
+          <article class="sortFilterContainer" id="sortFilterContainerMovies">
+            <i class="fa-solid fa-sort-down" id="sortArrow"></i>
+            <select name="sort" id="sortOptions" class="btnBar sortSelect">
+              <option value="sort" class="btnBar">Sort by release date</option>
+              <option value="newest" class="btnBar">Newest</option>
+              <option value="oldest" class="btnBar">Oldest</option>
+            </select>
+            
+            <i class="fa-solid fa-sliders" id="filterSlider"></i>
+            <select name="director" id="directorByFilter" class="btnBar directorFilter">
+              <option value="filter" class="btnBar">Filter by directors</option>
+              <option value="Hayao Miyazaki" class="btnBar">Hayao Miyazaki</option>
+              <option value="Isao Takahata" class="btnBar">Isao Takahata</option>
+              <option value="Yoshifumi Kondō" class="btnBar">Yoshifumi Kondō</option>
+              <option value="Hiroyuki Morita" class="btnBar">Hiroyuki Morita</option>
+              <option value="Gorō Miyazaki" class="btnBar">Gorō Miyazaki</option>
+              <option value="Hiromasa Yonebayashi" class="btnBar">Hiromasa Yonebayashi</option>
+            </select>
+          </article>
+        </section>
+        <section class="movieContainer" id="movieContainer">
+        </section>
+      </div>
+
+      <!-- Barra section para Characters -->
+      <div class="characterWrap" id="characterWrap">
+        <!--  Section para sort y filter en Characters -->
+        <section>
+          <article class="sortFilterContainer" id="sortFilterContainerCharacters">
+            <!-- <i class="fa-solid fa-sort-down" id="sortArrow"></i> -->
+            <select name="sort" id="sortCharacters" class="btnBar sortCharacters">
+              <option value="sort" class="btnBar">Sort by name</option>
+              <option value="A-Z" class="btnBar">A-Z</option>
+              <option value="Z-A" class="btnBar">Z-A</option>
+            </select>
+            
+            <!-- <i class="fa-solid fa-sliders" id="filterSlider"></i> -->
+            <select name="director" id="genderFilter" class="btnBar genderFilter">
+              <option value="filter" class="btnBar">Filter by gender</option>
+              <option value="Female" class="btnBar">Female</option>
+              <option value="Male" class="btnBar">Male</option>
+            </select>
+          </article>
+        </section>
+        <section class="characterContainer" id="characterContainer">
+        </section>
+      </div>
     </main>
     <footer class="footer">
       <p><a href="https://github.com/thatmare" class="linkGitHub">thatmare</a></p>
@@ -92,5 +151,6 @@
       <i class="fa-brands fa-twitter fa-2xl"></i>    
     </footer>
     <script src="main.js" type="module"></script>
+    <script src="../test/data.spec.js" type="script"></script>
   </body>
 </html>

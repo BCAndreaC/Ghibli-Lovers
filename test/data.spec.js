@@ -1,4 +1,4 @@
-import { sortByNewest, sortByOldest, filterDirector } from '../src/data.js';
+import { sortByNewest, sortByOldest, filterDirector, filterGender, sortByAZ, sortByZA} from '../src/data.js';
 
 const dataSample = [
   {
@@ -20,7 +20,7 @@ const dataSample = [
         "name": "Dola",
         "gender": "Female",
         "age": "60",
-      },
+      }
     ]
   },
   {
@@ -42,11 +42,10 @@ const dataSample = [
         "name": "Chu Totoro",
         "gender": "NA",
         "age": "",
-      },
+      }
     ]
-  },
+  }
 ]
-
 
 describe('sortByNewest', () => {
   const expectedNewestFilms = [
@@ -69,7 +68,7 @@ describe('sortByNewest', () => {
           "name": "Chu Totoro",
           "gender": "NA",
           "age": "",
-        },
+        }
       ]
     },
     {
@@ -91,11 +90,12 @@ describe('sortByNewest', () => {
           "name": "Dola",
           "gender": "Female",
           "age": "60",
-        },
+        }
       ]
     }
   ]
-
+  const emptyDataSample = [];
+  const expectEmptyDataSample = [];
 
   it('is a function', () => {
     expect(typeof sortByNewest).toBe('function');
@@ -103,6 +103,10 @@ describe('sortByNewest', () => {
 
   it('must return the newest movies', () => {
     expect(sortByNewest(dataSample)).toEqual(expectedNewestFilms);
+  });
+  
+  it('must return an empty array when input is empty', () => {
+    expect(sortByNewest(emptyDataSample)).toEqual(expectEmptyDataSample);
   });
 });
 
@@ -149,3 +153,98 @@ describe('filterDirector', () => {
     expect(filterDirector(dataSample, directorSample)).toEqual(expectedFilms);
   })
 }); 
+
+describe('filterGender', () => {
+  const characterDataSample = dataSample.flatMap(movie => movie.people);
+  it ('is a function', () => {
+    expect(typeof filterGender).toBe('function');
+  })
+  it ('must return only females', () => {
+    const filterFemale = filterGender(characterDataSample, "Female");
+    expect (filterFemale[0].gender).toEqual("Female");
+  }); 
+});
+
+const pruebaAZ = [
+  {
+    "title": "Castle in the Sky",
+    "director": "Hayao Miyazaki",
+    "release_date": "1986",
+    "people": [
+      {
+        "name": "Pazu",
+        "gender": "Male",
+        "age": "13",
+      },
+      {
+        "name": "Lusheeta Toel Ul Laputa",
+        "gender": "Female",
+        "age": "13",
+      },
+      {
+        "name": "Dola",
+        "gender": "Female",
+        "age": "60",
+      }
+    ]
+  },
+];
+
+describe('sortByAZ', () => {
+  const characterDataSample = pruebaAZ.flatMap(movie => movie.people);
+  const expectPruebaAZ = [
+    
+    {
+      "name": "Dola",
+      "gender": "Female",
+      "age": "60",
+    },
+    {
+      "name": "Lusheeta Toel Ul Laputa",
+      "gender": "Female",
+      "age": "13",
+    },
+    {
+      "name": "Pazu",
+      "gender": "Male",
+      "age": "13",
+    }
+  ];
+
+  it('is a function', () => {
+    expect(typeof sortByAZ).toBe('function');
+  });
+  it('must return characters ordered from A to Z', () => {
+    expect(sortByAZ(characterDataSample)).toEqual(expectPruebaAZ);
+  });
+});
+
+describe('sortByZA', () => {
+  const characterDataSample = pruebaAZ.flatMap(movie => movie.people);
+  const expectPruebaZA = [
+    
+    {
+      "name": "Pazu",
+      "gender": "Male",
+      "age": "13",
+    }
+    ,
+    {
+      "name": "Lusheeta Toel Ul Laputa",
+      "gender": "Female",
+      "age": "13",
+    },
+    {
+      "name": "Dola",
+      "gender": "Female",
+      "age": "60",
+    },
+  ];
+
+  it('is a function', () => {
+    expect(typeof sortByZA).toBe('function');
+  });
+  it('must return characters ordered from Z to A', () => {
+    expect(sortByZA(characterDataSample)).toEqual(expectPruebaZA);
+  });
+});
