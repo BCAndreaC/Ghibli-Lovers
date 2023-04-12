@@ -25,8 +25,8 @@
 
     .manual-btn{
         border: 2px solid #012B99;
-        padding: 20px;
-        border-radius: 60px;
+        padding: 5px;
+        border-radius: 10px;
         margin: 5px;
         cursor: pointer;
         transition: 1s;
@@ -83,7 +83,7 @@
     }
 
     .hamburger.active .bar:nth-child(1) {
-        transform: translateY(52px) rotate(45deg);
+        transform: translateY(16px) rotate(45deg);
     }
 
     .hamburger.active .bar:nth-child(3) {
