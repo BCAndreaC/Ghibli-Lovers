@@ -21,6 +21,9 @@ const resultFemaleCharacters = document.getElementById('resultFemale');
 const yesMaleBtn = document.getElementById('yesMale');
 const resultMaleCharacters = document.getElementById('resultMale');
 
+let filtered = dataGhibli;
+let filteredPeople = people;
+
 //Función de menú hamburger
 function mobileMenu() {
   hamburger.classList.toggle("active");
@@ -101,14 +104,14 @@ filterByGender.addEventListener("change", () => {
 
 //Ordenar películas por más recientes
 function sortByNewestMovies() {
-  const newestOrder = sortByNewest(dataGhibli)
+  const newestOrder = sortByNewest(filtered)
   movieContainer.innerHTML = '';
   return displayFilms(newestOrder);
 }
 
 //Ordenar películas por más antiguas
 function sortByOldestMovies() {
-  const oldestOrder = sortByOldest(dataGhibli)
+  const oldestOrder = sortByOldest(filtered)
   movieContainer.innerHTML = '';
   return displayFilms(oldestOrder);
 }
@@ -123,13 +126,13 @@ sortOptions.addEventListener('click', function(){
 });
 
 function sortByAZCharacters(){
-  const azOrder = sortByAZ(people)
+  const azOrder = sortByAZ(filteredPeople)
   characterContainer.innerHTML = '';
   return displayCharacters(azOrder);
 }
 
 function sortByZACharacters(){
-  const zaOrder = sortByZA(people)
+  const zaOrder = sortByZA(filteredPeople)
   characterContainer.innerHTML = '';
   return displayCharacters(zaOrder);
 }
@@ -145,17 +148,17 @@ sortCharacters.addEventListener('click', function(){
 // Escuchador de evento para la función de filtrado por director
 filterOptions.addEventListener("change", () => {
   const directorSelected = filterOptions.value;
-  const directorFiltered = filterDirector(dataGhibli, directorSelected);
+  filtered = filterDirector(dataGhibli, directorSelected);
   movieContainer.innerHTML = '';
-  displayFilms(directorFiltered);
+  displayFilms(filtered);
 });
 
 // Escuchador de evento para la función de filtrar por género
 filterByGender.addEventListener("change", () => {
   const genderSelected = filterByGender.value;
-  const genderFiltered = filterGender(people, genderSelected);
+  filteredPeople = filterGender(people, genderSelected);
   characterContainer.innerHTML = '';
-  displayCharacters(genderFiltered);
+  displayCharacters(filteredPeople);
 })
 
 // Función para despliegue de personajes
@@ -208,8 +211,7 @@ function displayFilms(films) {
     movieContainer.appendChild(createFigure);
   })
 }
-displayFilms(dataGhibli);
-
+displayFilms(filtered);
 
 //Crear fun facts
 yesFemaleBtn.addEventListener('click', function(){
@@ -218,6 +220,4 @@ yesFemaleBtn.addEventListener('click', function(){
 
 yesMaleBtn.addEventListener('click', function() {
   resultMaleCharacters.innerHTML = ("The total of male characters are " + totalCharacterGender(people, 'Male') + ".")
-})
-
-
+});
