@@ -28,3 +28,14 @@ export const filterDirector = (films, selectDirectors) =>{
 export const filterGender = (characters, selectGender) => {
   return characters.filter((character) => character.gender.includes(selectGender));
 };
+
+//Funcion para visualizar la cantidad de mujeres en total
+export const totalCharacterGender = (characters, gender) => {
+  return characters.reduce((total, character) => {
+    if(character.gender === gender){
+      return total + 1;
+    } else {
+      return total;
+    }
+  }, 0);
+};

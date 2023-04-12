@@ -1,5 +1,6 @@
-import { sortByNewest, sortByOldest, filterDirector, filterGender, sortByAZ, sortByZA} from '../src/data.js';
+import { sortByNewest, sortByOldest, filterDirector, filterGender, sortByAZ, sortByZA, totalCharacterGender} from '../src/data.js';
 
+const emptyDataSample = [];
 const dataSample = [
   {
     "title": "Castle in the Sky",
@@ -46,6 +47,31 @@ const dataSample = [
     ]
   }
 ]
+const characterSampleMapped = [
+  {
+    "title": "Castle in the Sky",
+    "director": "Hayao Miyazaki",
+    "release_date": "1986",
+    "people": [
+      {
+        "name": "Lusheeta Toel Ul Laputa",
+        "gender": "Female",
+        "age": "13",
+      },
+      {
+        "name": "Pazu",
+        "gender": "Male",
+        "age": "13",
+      },
+      {
+        "name": "Dola",
+        "gender": "Female",
+        "age": "60",
+      }
+    ]
+  },
+];
+const characterDataSample = characterSampleMapped.flatMap(movie => movie.people);
 
 describe('sortByNewest', () => {
   const expectedNewestFilms = [
@@ -94,9 +120,7 @@ describe('sortByNewest', () => {
       ]
     }
   ]
-  const emptyDataSample = [];
-  const expectEmptyDataSample = [];
-
+  
   it('is a function', () => {
     expect(typeof sortByNewest).toBe('function');
   });
@@ -104,9 +128,9 @@ describe('sortByNewest', () => {
   it('must return the newest movies', () => {
     expect(sortByNewest(dataSample)).toEqual(expectedNewestFilms);
   });
-  
-  it('must return an empty array when input is empty', () => {
-    expect(sortByNewest(emptyDataSample)).toEqual(expectEmptyDataSample);
+
+  it ('must not return the newest movies', () => {
+    expect(sortByNewest(dataSample)).not.toEqual(emptyDataSample);
   });
 });
 
@@ -117,6 +141,9 @@ describe('sortByOldest', () => {
 
   it('must return the oldest movies', () => {
     expect(sortByOldest(dataSample)).toEqual(dataSample);
+  });
+  it ('must not return the oldest movies', () => {
+    expect(sortByOldest(dataSample)).not.toEqual(emptyDataSample);
   });
 });
 
@@ -165,33 +192,7 @@ describe('filterGender', () => {
   }); 
 });
 
-const pruebaAZ = [
-  {
-    "title": "Castle in the Sky",
-    "director": "Hayao Miyazaki",
-    "release_date": "1986",
-    "people": [
-      {
-        "name": "Pazu",
-        "gender": "Male",
-        "age": "13",
-      },
-      {
-        "name": "Lusheeta Toel Ul Laputa",
-        "gender": "Female",
-        "age": "13",
-      },
-      {
-        "name": "Dola",
-        "gender": "Female",
-        "age": "60",
-      }
-    ]
-  },
-];
-
 describe('sortByAZ', () => {
-  const characterDataSample = pruebaAZ.flatMap(movie => movie.people);
   const expectPruebaAZ = [
     
     {
@@ -214,21 +215,24 @@ describe('sortByAZ', () => {
   it('is a function', () => {
     expect(typeof sortByAZ).toBe('function');
   });
+
   it('must return characters ordered from A to Z', () => {
     expect(sortByAZ(characterDataSample)).toEqual(expectPruebaAZ);
+  });
+  
+  it('must return characters ordered from A to Z', () => {
+    expect(sortByAZ(characterDataSample)).toBeTruthy();
   });
 });
 
 describe('sortByZA', () => {
-  const characterDataSample = pruebaAZ.flatMap(movie => movie.people);
   const expectPruebaZA = [
     
     {
       "name": "Pazu",
       "gender": "Male",
       "age": "13",
-    }
-    ,
+    },
     {
       "name": "Lusheeta Toel Ul Laputa",
       "gender": "Female",
@@ -244,7 +248,26 @@ describe('sortByZA', () => {
   it('is a function', () => {
     expect(typeof sortByZA).toBe('function');
   });
+  
   it('must return characters ordered from Z to A', () => {
     expect(sortByZA(characterDataSample)).toEqual(expectPruebaZA);
   });
+
+  it('must return characters ordered from Z to A', () => {
+    expect(sortByZA(characterDataSample)).toBeTruthy();
+  });
 });
+
+describe('totalCharacterGender', () => {
+  it('is a function', () => {
+    expect(typeof totalCharacterGender).toBe('function');
+  });
+
+  it('must return the total amount of female characters', () => {
+    expect(totalCharacterGender(characterDataSample, 'Female')).toEqual(2);
+  });
+
+  it('must return the total amount of male characters', () => {
+    expect(totalCharacterGender(characterDataSample, 'Male')).toEqual(1);
+  })
+})

@@ -1,13 +1,14 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <title>Ghibli Lovers</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/logo.png">
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="mobile.css">
     <link rel="stylesheet" href="tablet.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
   </head>
@@ -133,11 +134,29 @@
             <!-- <i class="fa-solid fa-sliders" id="filterSlider"></i> -->
             <select name="director" id="genderFilter" class="btnBar genderFilter">
               <option value="filter" class="btnBar">Filter by gender</option>
-              <option value="Female" class="btnBar">Female</option>
+              <option value="Female" class="btnBar">Female </option>
               <option value="Male" class="btnBar">Male</option>
             </select>
+            <!-- <p id="resultMale"></p>
+            <p id="resultFemale"></p> -->
           </article>
         </section>
+        <div id="femaleFunFact" class="femaleFunFact">
+          <img src="./assets/chihiro.png" alt="Logo from the movie Spirited Away" class="imageFunFact">
+          <div class="questionBtnContainer">
+            <p class="funFactQuestion">Do you want to know how many female characters exist in the world of Ghibli movies?</p>
+            <button id="yesFemale" class="yesBtn">Yes</button>
+          </div>
+          <span id="resultFemale" class="funFactResult"></span>
+        </div>
+        <div id="maleFunFact" class="maleFunFact">
+          <img src="./assets/jiji.png" alt="Logo from the movie Spirited Away" class="imageFunFact">
+          <div class="questionBtnContainer">
+            <p class="funFactQuestion">Do you want to know how many male characters exist in the world of Ghibli movies?</p>
+            <button id="yesMale" class="yesBtn">Yes</button>
+          </div>
+          <span id="resultMale" class="funFactResult"></span>
+        </div>
         <section class="characterContainer" id="characterContainer">
         </section>
       </div>
