@@ -1,12 +1,43 @@
 @media only screen and (max-width: 600px)  {
+    body {
+        height: 100vh;
+    }
+    
     main {
         display: flex;
         flex-wrap: wrap;
         flex-direction: column;
         justify-content: center;
-        min-height: 72vh;
+        /* min-height: 72vh; */
     }
 
+    .slider{
+        width: 375px;
+        height: 400px;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .slides{
+        width: 500%;
+        height: 375px;
+        display: flex;
+    
+    }
+    .slide img {
+        width: 375px;
+        height: 500px;
+        object-fit: contain;
+    }
+
+    .navigation-manual{
+        position: absolute;
+        width: 375px;
+        margin-top: 40px;
+        display: flex;
+        justify-content: center;
+    }
+    
     .logoImage{
         position: absolute;
         width: 100px;
@@ -27,7 +58,6 @@
         border: 2px solid #012B99;
         padding: 10px;
         border-radius: 15px;
-        margin: 5px;
         cursor: pointer;
         transition: 1s;
     }
@@ -88,6 +118,11 @@
 
     .hamburger.active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .container_welcomeMessage {
+        margin-top: 6rem;
+        padding: 0 12%;
     }
 
 

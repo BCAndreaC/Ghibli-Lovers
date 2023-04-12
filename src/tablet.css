@@ -1,4 +1,8 @@
 @media only screen and (max-width: 768px)  {
+    body {
+        height: 100%;
+    }
+    
     .nav-menu {
         position: fixed;
         z-index: 1;
@@ -52,7 +56,7 @@
         position: absolute;
         width: 60px;
         height: 60px;
-        left: 92%;
+        left: 83%;
         top: 11px;
     }
 
@@ -74,7 +78,7 @@
 
     /* Mensaje de bienvenida de homepage */
     .container_welcomeMessage {
-        margin-bottom: 2rem;
+        margin-bottom: 7rem;
     }
 
     .welcomeTitleh3 {
