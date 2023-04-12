@@ -1,4 +1,4 @@
-import { sortByNewest, sortByOldest, filterDirector, filterGender, sortByAZ, sortByZA } from './data.js';
+import { sortByNewest, sortByOldest, filterDirector, filterGender, sortByAZ, sortByZA, totalCharacterGender } from './data.js';
 //Nos dimos cuenta que data puede ser cualquier palabra ya que funciona "como una variable"
 import data from './data/ghibli/ghibli.js';
 //Declaramos una variable que recupera los films de la data
@@ -9,12 +9,17 @@ const btnMovies = document.getElementById('btn-movies');
 const btnCharacters = document.getElementById('btn-characters');
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
+const navLink = document.querySelectorAll(".nav-item");
 const sortOptions = document.getElementById('sortOptions');
 const sortCharacters = document.getElementById('sortCharacters');
 const filterOptions = document.getElementById('directorByFilter');
 const filterByGender = document.getElementById('genderFilter');
 const movieContainer = document.getElementById("movieContainer");
 const characterContainer = document.getElementById('characterContainer');
+const yesFemaleBtn = document.getElementById('yesFemale');
+const resultFemaleCharacters = document.getElementById('resultFemale');
+const yesMaleBtn = document.getElementById('yesMale');
+const resultMaleCharacters = document.getElementById('resultMale');
 
 //Función de menú hamburger
 function mobileMenu() {
@@ -22,6 +27,12 @@ function mobileMenu() {
   navMenu.classList.toggle("active");
 }
 hamburger.addEventListener("click", mobileMenu);
+
+function closeMenu() {
+  hamburger.classList.remove("active");
+  navMenu.classList.remove("active");
+}
+navLink.forEach(n => n.addEventListener("click", closeMenu));
 
 //Función para ingresar a la página Home
 function displayHomepage(){
@@ -62,6 +73,31 @@ function displayCharacterPage(){
   characterWrap.style.display = "flex";
 }
 btnCharacters.addEventListener('click', displayCharacterPage);
+
+//Funciones para mostrar contenedores de fun facts 
+function displayFemaleFunFact() {
+  const maleFunFactContainer = document.getElementById('maleFunFact');
+  maleFunFactContainer.style.display = 'none'
+
+  const femaleFunFactContainer = document.getElementById('femaleFunFact');
+  femaleFunFactContainer.style.display = 'flex';
+}
+
+function displayMaleFunFact() {
+  const femaleFunFactContainer = document.getElementById('femaleFunFact');
+  femaleFunFactContainer.style.display = 'none';
+
+  const maleFunFactContainer = document.getElementById('maleFunFact');
+  maleFunFactContainer.style.display = 'flex'
+}
+
+filterByGender.addEventListener("change", () => {
+  if (filterByGender.value === 'Female') {
+    displayFemaleFunFact();
+  } else if (filterByGender.value === 'Male') {
+    displayMaleFunFact();
+  }
+})
 
 //Ordenar películas por más recientes
 function sortByNewestMovies() {
@@ -173,3 +209,15 @@ function displayFilms(films) {
   })
 }
 displayFilms(dataGhibli);
+
+
+//Crear fun facts
+yesFemaleBtn.addEventListener('click', function(){
+  resultFemaleCharacters.innerHTML = ("The total of female characters are " + totalCharacterGender(people, 'Female') + ".") 
+});
+
+yesMaleBtn.addEventListener('click', function() {
+  resultMaleCharacters.innerHTML = ("The total of male characters are " + totalCharacterGender(people, 'Male') + ".")
+})
+
+

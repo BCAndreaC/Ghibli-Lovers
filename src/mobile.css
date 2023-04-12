@@ -1,10 +1,18 @@
-@media only screen and (max-width: 430px)  {
+@media only screen and (max-width: 600px)  {
+    main {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 72vh;
+    }
+
     .logoImage{
         position: absolute;
-        width: 60px;
-        height: 60px;
-        left: 83%;
-        top: 11px;
+        width: 100px;
+        height: 100px;
+        left: 87%;
+        top: 23px;
     }
 
     .titleWebpage {
@@ -15,6 +23,19 @@
         height: 4vh;
     }
 
+    .manual-btn{
+        border: 2px solid #012B99;
+        padding: 20px;
+        border-radius: 60px;
+        margin: 5px;
+        cursor: pointer;
+        transition: 1s;
+    }
+
+    .container_welcomMessage{
+        margin-top: 13rem;
+    }
+
     #filterSlider {
         font-size: 1.5rem;
     }
@@ -22,59 +43,6 @@
     #sortArrow{
         font-size: 1.5rem;
     }
-
-    /* Carrusel mobile */
-    /* .slider{
-        width: 400px;
-        height: 300px;
-        border-radius: 10px;
-        overflow: hidden;
-    }
-    
-    .slides{
-        width: 400%;
-        height: 300px;
-        display: flex;
-    }
-    
-    .slides input {
-        display: none;
-    }
-    
-    .slide{
-        width: 20%;
-        transition: 2s;
-    }
-    
-    .slide img {
-        width: 85vw;
-        height: 45vh;
-        object-fit: contain;
-    }
-    
-    .navigation-manual{
-        position: absolute;
-        width: 660px;
-        margin-top: -40px;
-        display: flex;
-        justify-content: center;
-    }
-    
-    .manual-btn{
-        border: 2px solid #012B99;
-        padding: 5px;
-        border-radius: 10px;
-        cursor: pointer;
-        transition: 1s;
-    }
-    
-    .manual-btn:not(:last-child){
-        margin-right: 20px;
-    }
-    
-    .manual-btn:hover{
-        background: #012B99;
-    } */
 
     .filmContainer{
         max-width: 15rem;
@@ -104,5 +72,23 @@
         padding: 1rem 10vw;
         height: 6rem;
     }
+
+    .nav-menu.active {
+        left: 0;
+        margin-top: 10%;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(52px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
 
 }

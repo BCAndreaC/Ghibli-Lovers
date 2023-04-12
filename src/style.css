@@ -149,8 +149,9 @@ li {
 li:hover{
     color: #012B99;
     background-color: white;
-    border: .2px solid #012B99;
+    border: 2px solid #012B99;
     font-weight: 600;
+    cursor: pointer;
 }
 
 
@@ -171,9 +172,9 @@ li:hover{
 .bar {
     border-radius: 10px;
     display: block;
-    width: 40px;
-    height: 6px;
-    margin: 6px auto;
+    width: 90px;
+    height: 15px;
+    margin: 15px 20px;
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
     background-color: #012B99;
@@ -197,13 +198,6 @@ li:hover{
     width: 2rem;
     height: 1rem;
     border-radius: 10px;
-}
-
-.nav-link:hover{
-    color: #012B99;
-    background-color: white;
-    font-size: 2.5rem;
-    font-weight: 600;
 }
 
 /* Mensaje de bienvenida */
@@ -337,6 +331,71 @@ li:hover{
     justify-content: center;
     align-content: center;
     margin: 4% 2%;
+}
+
+/* Contenedor de fun facts para cálculo agregado */
+.femaleFunFact, .maleFunFact{
+    display: none;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 65vw;
+    height: 15vh;
+    margin: 4%;
+}
+
+.imageFunFact{
+    width: 8vw;
+    height: 20vh;
+    object-fit: contain;
+}
+
+.questionBtnContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.funFactQuestion, .funFactResult {
+    font-size: 2.4rem;
+    text-align: center;
+    color: #012B99;
+}
+
+.funFactQuestion {
+    font-weight: 500;
+}
+
+.funFactResult {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    color: #012B99;
+}
+
+.yesBtn {
+    appearance: none;
+    appearance: none;
+    width: 12vw;
+    height: 4rem;
+    margin: 1rem;
+    font-family: 'Quicksand';
+    font-weight: 600;
+    font-size: 1.7rem;
+    color: white;
+    background-color: #012B99;
+    border: 2.5px solid #9cabd1;
+    border-radius: 20px;
+    box-shadow: 3px 3px 8px #031030;;
+}
+
+.yesBtn:hover {
+    color: #012B99;
+    background-color: white;
+    border: 2.5px solid #012B99;
+    font-weight: 600;
+    cursor: pointer;
 }
 
 /* Pie de página */
