@@ -45,7 +45,7 @@
     }
 
     .hamburger.active .bar:nth-child(1) {
-        transform: translateY(15px) rotate(45deg);
+        transform: translateY(14px) rotate(45deg);
     }
 
     .hamburger.active .bar:nth-child(3) {
