@@ -86,8 +86,8 @@
     /* Characters */
 
     .filmContainer{
-        max-width: 17rem;
-        max-height: 25rem;
+        width: 24rem;
+        
         display: flex;  
         flex-direction: column;
         justify-content: center;

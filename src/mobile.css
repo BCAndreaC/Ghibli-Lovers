@@ -92,15 +92,6 @@
     }
 
     /* Tarjetas de películas */
-    .filmContainer{
-        max-width: 15rem;
-        max-height: 20rem;
-        display: flex;  
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 2rem;
-    }
 
     .filmPoster{
         max-width: 15rem;

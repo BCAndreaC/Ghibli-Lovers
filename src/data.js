@@ -1,19 +1,22 @@
-
+//Ordenar de más recientes
 export const sortByNewest = (films) => {
   const sortedData = films.sort((a, b) => (a.release_date < b.release_date ? 1 : -1));
   return sortedData;
 };
 
+//Ordenar de más antiguas
 export const sortByOldest = (films) => {
   const sortedData = films.sort((a, b) => (a.release_date > b.release_date ? 1 : -1));
   return sortedData;
 };
 
+//Ordenar de la A-Z
 export const sortByAZ = (films) => {
   const sortedData = films.sort((a,z) => (a.name > z.name ? 1 : -1));
   return sortedData;
 };
 
+//Ordenar de la Z-A 
 export const sortByZA = (films) => {
   const sortedData = films.sort ((a,z) => (a.name < z.name ? 1 : -1));
   return sortedData;
