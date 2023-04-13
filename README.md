@@ -1,9 +1,9 @@
 # Ghibli Lovers
-
+[Ghibli Lovers Github pages](https://bcandreac.github.io/Ghibli-Lovers/src/index)
 ## Índice
 
 * [1. Definición del producto](#1-definición-del-producto)
-* [2. Historias de usuarix](#2-resumen-del-proyecto)
+* [2. Historias de usuarix](#2-historias-de-usuarix)
 * [3. Prototipos](#3-prototipos)
 * [4. Test de usabilidad](#4-test-de-usabilidad)
 
@@ -13,13 +13,15 @@
 
 Ghibli Lovers es una aplicación web para explorar las películas y personajes del Estudio de animación Ghibli, además de que permite ordenar y filtrar las películas por orden alfabético, directores, y los personajes por edad y género. 
 
-<!-- IMAGEN DE LA APLICACIÓN EN DISTINTAS PANTALLAS Y DISPOSITIVOS -->
+![image](https://user-images.githubusercontent.com/126895867/231892838-f1a455fe-d56c-44b4-b608-2ba6121c39ac.png)
+![image](https://user-images.githubusercontent.com/126895867/231893176-8bef518d-b8cb-46cc-a43d-46478f4568c6.png)
+
 
 ## 2. Historias de usuarix
 
 Definimos cuatro historias de usuaria que guiaron el diseño de nuestra aplicación:
 
-**AQUI PONER IMGEN DE HISTORIAS DE USUARIX**
+![image](https://user-images.githubusercontent.com/126895867/231892313-653b1a48-592d-4b0d-a37e-1bd6443ce7a0.png)
 
 * HU1: **Yo como** usuarix que hace mucho dejé de ver Ghibli **quiero** ponerme al dia de todas las peliculas nuevas que hay **para** saber cuántas películas me faltan ver.
 
@@ -42,7 +44,7 @@ Estas historias están basadas en la siguiente investigación de usuarias:
 ### Prototipo de baja fidelidad
 Realizamos el prototipo de baja fidelidad para celular, tablet y desktop. 
 
-<!-- SCREENSHOT DEL PBF CON INTERACCIONES -->
+![image](https://user-images.githubusercontent.com/126895867/231893907-cb6cad4a-c086-46a9-82f7-ac58ba177251.png)
 
 ### Prototipo de alta fidelidad
 Para nuestro prototipo de alta fidelidad, consideramos los siguientes aspectos:
@@ -50,7 +52,7 @@ Para nuestro prototipo de alta fidelidad, consideramos los siguientes aspectos:
 - Suavidad en los elementos: la tipografía, menú y botones transmiten comodidad. 
 - Una página para aficionadas de Ghibli: el carrusel de bienvenida muestra imágenes y collages realizados por seguidores del estudio. 
 
-<!-- SCREENSHOT DEL PAF -->
+![image](https://user-images.githubusercontent.com/126895867/231894086-2b427f7a-a363-4b3c-8143-51e857456706.png)
 
 ## 4. Test de usabilidad
 Realizamos seis tests de usabilidad: tres para nuestros prototipos de baja y tres para nuestros prototipos de alta fidelidad, donde la retroalimentación fue la siguiente:
@@ -61,29 +63,29 @@ Realizamos seis tests de usabilidad: tres para nuestros prototipos de baja y tre
 
 - Los botones de ordenado y filtrado podrían ser mas pequeños.
 
--La barra de filtrado y ordenado es sencilla e intuitiva.
+- La barra de filtrado y ordenado es sencilla e intuitiva.
 
--Mantener textos cortos y concisos.
+- Mantener textos cortos y concisos.
 
--El botón de menú en el escritorio fue efectivo para todas.
+- El botón de menú en el escritorio fue efectivo para todas.
 
 ### Prototipo de alta fidelidad
 
-[] Centrar el nombre de las películas.
+- Centrar el nombre de las películas.
 
-[] El campo de fecha en su propia área (un renglón aparte del título).
+- El campo de fecha en su propia área (un renglón aparte del título).
 
-.Incluir footer con redes sociales.
+- Incluir footer con redes sociales.
 
-[] Hacer los botones un poco más grandes.
+- Hacer los botones un poco más grandes.
 
-[] Buena combinación de colores.
+- Buena combinación de colores.
 
-[] La tipografía es fácil de leer y entender.
+- La tipografía es fácil de leer y entender.
 
-[] Buena distribución del contenido.
+- Buena distribución del contenido.
 
-[] Excelente tamaño de los posters.
+- Excelente tamaño de los posters.
 
 ***
 
@@ -99,11 +101,14 @@ Realizamos seis tests de usabilidad: tres para nuestros prototipos de baja y tre
 
 Ghibli Lovers is a web application for exploring the movies and characters of the animation studio Ghibli. It allows users to sort and filter movies alphabetically and by directors, and to filter characters by age and gender.
 
-<!-- IMAGE OF THE APPLICATION ON DIFFERENT SCREENS AND DEVICES -->
+![image](https://user-images.githubusercontent.com/126895867/231892838-f1a455fe-d56c-44b4-b608-2ba6121c39ac.png)
+![image](https://user-images.githubusercontent.com/126895867/231893176-8bef518d-b8cb-46cc-a43d-46478f4568c6.png)
 
 ## 2. User Stories
 
 We defined four user stories that guided the design of our application:
+
+![image](https://user-images.githubusercontent.com/126895867/231892313-653b1a48-592d-4b0d-a37e-1bd6443ce7a0.png)
 
 * US1: **As a** user who hasn't watched Ghibli movies in a long time, **I want** to catch up on all the new movies **so that** I can know how many movies I still need to watch.
 
@@ -127,7 +132,7 @@ These stories are based on the following user research:
 
 We created a low-fidelity prototype for mobile, tablet, and desktop.
 
-<!-- SCREENSHOT OF LFP WITH INTERACTIONS -->
+![image](https://user-images.githubusercontent.com/126895867/231893907-cb6cad4a-c086-46a9-82f7-ac58ba177251.png)
 
 ### High-Fidelity Prototype
 
@@ -136,7 +141,8 @@ For our high-fidelity prototype, we considered the following aspects:
 - Posters as the focal point: one of the most relevant features of Studio Ghibli is its color palette, so the center of attention should be on the posters.
 - Smoothness in the elements: typography, menu, and buttons convey comfort.
 - A page for Ghibli enthusiasts: the welcome carousel shows images and collages made by studio fans.
-<!-- SCREENSHOT OF HFP -->
+
+![image](https://user-images.githubusercontent.com/126895867/231894086-2b427f7a-a363-4b3c-8143-51e857456706.png)
 
 ## 4. Usability Testing
 
