@@ -57,15 +57,15 @@ Realizamos seis tests de usabilidad: tres para nuestros prototipos de baja y tre
 
 ### Prototipo de baja fidelidad
 
-[] Pantalla de bienvenida: que no sea necesario tener que cerrar para visualizar la data.
+- Pantalla de bienvenida: que no sea necesario tener que cerrar para visualizar la data.
 
-[] Los botones de ordenado y filtrado podrían ser mas pequeños.
+- Los botones de ordenado y filtrado podrían ser mas pequeños.
 
-[] La barra de filtrado y ordenado es sencilla e intuitiva.
+-La barra de filtrado y ordenado es sencilla e intuitiva.
 
-[] Mantener textos cortos y concisos.
+-Mantener textos cortos y concisos.
 
-[] El botón de menú en el escritorio fue efectivo para todas.
+-El botón de menú en el escritorio fue efectivo para todas.
 
 ### Prototipo de alta fidelidad
 
@@ -73,7 +73,7 @@ Realizamos seis tests de usabilidad: tres para nuestros prototipos de baja y tre
 
 [] El campo de fecha en su propia área (un renglón aparte del título).
 
-[] Incluir footer con redes sociales.
+.Incluir footer con redes sociales.
 
 [] Hacer los botones un poco más grandes.
 
@@ -144,30 +144,30 @@ We conducted six usability tests: three for our low-fidelity prototypes and thre
 
 ### Low-Fidelity Prototype
 
-[] Welcome screen: it should not be necessary to close it to view the data.
+- Welcome screen: it should not be necessary to close it to view the data.
 
-[] Sorting and filtering buttons could be smaller.
+- Sorting and filtering buttons could be smaller.
 
-[] The sorting and filtering bar is simple and intuitive.
+- The sorting and filtering bar is simple and intuitive.
 
-[] Keep texts short and concise.
+- Keep texts short and concise.
 
-[] The menu button on the desktop was effective for everyone.
+- The menu button on the desktop was effective for everyone.
 
 ### High-Fidelity Prototype
 
-[] Center the movie titles.
+- Center the movie titles.
 
-[] Place the date field in its own area (a line separate from the title).
+- Place the date field in its own area (a line separate from the title).
 
-[] Include a footer with social media links.
+- Include a footer with social media links.
 
-[] Make the buttons slightly larger.
+- Make the buttons slightly larger.
 
-[] Good color combination.
+- Good color combination.
 
-[] The typography is easy to read and understand.
+- The typography is easy to read and understand.
 
-[] Good distribution of content.
+- Good distribution of content.
 
-[] Excellent poster size.
+- Excellent poster size.
