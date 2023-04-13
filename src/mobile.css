@@ -8,9 +8,41 @@
         flex-wrap: wrap;
         flex-direction: column;
         justify-content: center;
-        /* min-height: 72vh; */
     }
 
+    /* Menú de hamburguesa mobile */
+    .nav-menu.active {
+        left: 0;
+        margin-top: 10%;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(14px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    /* Fin de menú de hamburguesa */
+
+    /* Logo que lleva a home */
+    .logoImage{
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        left: 87%;
+        top: 23px;
+    }
+
+    .titleWebpage {
+        font-size: 3rem;
+    }
+
+    /* Carrusel mobile */
     .slider{
         width: 375px;
         height: 400px;
@@ -37,22 +69,6 @@
         display: flex;
         justify-content: center;
     }
-    
-    .logoImage{
-        position: absolute;
-        width: 100px;
-        height: 100px;
-        left: 87%;
-        top: 23px;
-    }
-
-    .titleWebpage {
-        font-size: 3rem;
-    }
-
-    .btnBar {
-        height: 4vh;
-    }
 
     .manual-btn{
         border: 2px solid #012B99;
@@ -61,19 +77,21 @@
         cursor: pointer;
         transition: 1s;
     }
+    /* Fin de carrusel mobile */
 
-    .container_welcomMessage{
-        margin-top: 13rem;
+    .container_welcomeMessage {
+        margin-top: 6rem;
+        padding: 0 12%;
     }
 
-    #filterSlider {
-        font-size: 1.5rem;
-    }
-    
-    #sortArrow{
-        font-size: 1.5rem;
+    /* Botones de orden y filtrado */
+    .btnBar {
+        height: 5vh;
+        width: 45vw;
+        padding-left: 1rem;
     }
 
+    /* Tarjetas de películas */
     .filmContainer{
         max-width: 15rem;
         max-height: 20rem;
@@ -98,32 +116,53 @@
         font-size: 1.2rem;
     }
 
+    /* Contenedor de fun facts para cálculo agregado */
+
+    .femaleFunFact, .maleFunFact{
+        display: none;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 85vw;
+        height: 15vh;
+        margin: 6% 2%;
+    }
+    
+    .imageFunFact{
+        width: 8vw;
+        height: 20vh;
+        object-fit: contain;
+    }
+    
+    .questionBtnContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .funFactQuestion, .funFactResult {
+        font-size: 1.7rem;
+        text-align: center;
+        color: #012B99;
+    }
+
+    /* Página de personajes */
+    .characterContainer {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: space-evenly;
+        margin: 4% 2%;
+    }
+
+    /* Tarjeta de personajes */
+    .characterFigure{
+        width: 12rem;
+    }
+
     .footer {
         padding: 1rem 10vw;
         height: 6rem;
     }
-
-    .nav-menu.active {
-        left: 0;
-        margin-top: 10%;
-    }
-
-    .hamburger.active .bar:nth-child(2) {
-        opacity: 0;
-    }
-
-    .hamburger.active .bar:nth-child(1) {
-        transform: translateY(16px) rotate(45deg);
-    }
-
-    .hamburger.active .bar:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-    }
-
-    .container_welcomeMessage {
-        margin-top: 6rem;
-        padding: 0 12%;
-    }
-
-
 }

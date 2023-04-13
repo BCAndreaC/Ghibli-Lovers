@@ -19,12 +19,12 @@
             0 10px 27px rgba(0, 0, 0, 0.05);
     }
 
-    .nav-link{
+    /* .nav-link{
         font-size: 1.6rem;
         font-weight: 400;
         color: white;
         text-decoration: none;
-    }
+    } */
 
     .nav-menu.active {
         left: 0;
@@ -45,7 +45,7 @@
     }
 
     .hamburger.active .bar:nth-child(1) {
-        transform: translateY(16px) rotate(45deg);
+        transform: translateY(15px) rotate(45deg);
     }
 
     .hamburger.active .bar:nth-child(3) {
@@ -64,18 +64,6 @@
         font-size: 5rem;
     }
 
-    .btnBar {
-        height: 4vh;
-    }
-
-    #filterSlider {
-        font-size: 1.5rem;
-    }
-    
-    #sortArrow{
-        font-size: 1.5rem;
-    }
-
     /* Mensaje de bienvenida de homepage */
     .container_welcomeMessage {
         margin-bottom: 7rem;
@@ -89,14 +77,22 @@
         font-size: 2.8rem;
     }
 
+    /* Tamaño barra de sort y filter */
+
+    .btnBar {
+        height: 4vh;
+    }
+
+    /* Characters */
+
     .filmContainer{
-        max-width: 25rem;
+        max-width: 17rem;
         max-height: 25rem;
         display: flex;  
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin-bottom: 2rem;
+        margin: 2rem 0;
     }
 
     .filmPoster{
@@ -118,5 +114,4 @@
         padding: 1.5rem 10vw;
         height: 7rem;
     }
-
 }
