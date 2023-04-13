@@ -270,9 +270,9 @@ li:hover{
     /* Presentación de las películas (poster, título y fecha de lanzamiento) */
 .filmContainer {
     width: 35rem;
-    height: 35rem;
+    /*height: 31rem; */
     text-align: center;
-    margin-bottom: 7rem;
+    margin-bottom: 7rem; 
 }
 
 .filmPoster{
@@ -294,6 +294,42 @@ li:hover{
     color: #012B99;
     font-weight: 500;
 }
+
+.descriptionContainer{
+    width:22rem ;
+    margin: auto;
+    position: relative;
+    object-fit: contain;
+    text-align: left;
+    font-size: 1.4rem;
+    margin-top: 5px;
+    display: none;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+.filmContainer:hover{
+    cursor: pointer;
+    color: white;
+    background-color: #9cabd1;
+    box-shadow: 1.5px 1.5px 25px -5px #031030;
+    border-radius: 10px;
+    padding: 2%;
+}
+
+.filmContainer:hover .filmTitle {
+    color: white;
+}
+
+.filmContainer:hover .filmInformation {
+    color: white;
+}
+
+.filmContainer:hover .descriptionContainer{
+    display: block;
+    opacity: 1;
+}
+
 /* Fin de página de Movies */
 
 /* Página de personajes */
@@ -363,13 +399,7 @@ li:hover{
     object-fit: contain;
 }
 
-.questionBtnContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.funFactQuestion, .funFactResult {
+.funFactQuestion {
     font-size: 2.4rem;
     text-align: center;
     color: #012B99;
@@ -377,38 +407,6 @@ li:hover{
 
 .funFactQuestion {
     font-weight: 500;
-}
-
-.funFactResult {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: 600;
-    color: #012B99;
-}
-
-.yesBtn {
-    appearance: none;
-    appearance: none;
-    width: 12vw;
-    height: 4rem;
-    margin: 1rem;
-    font-family: 'Quicksand';
-    font-weight: 600;
-    font-size: 1.7rem;
-    color: white;
-    background-color: #012B99;
-    border: 2.5px solid #9cabd1;
-    border-radius: 20px;
-    box-shadow: 3px 3px 8px #031030;;
-}
-
-.yesBtn:hover {
-    color: #012B99;
-    background-color: white;
-    border: 2.5px solid #012B99;
-    font-weight: 600;
-    cursor: pointer;
 }
 
 /* Pie de página */

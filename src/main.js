@@ -16,10 +16,8 @@ const filterOptions = document.getElementById('directorByFilter');
 const filterByGender = document.getElementById('genderFilter');
 const movieContainer = document.getElementById("movieContainer");
 const characterContainer = document.getElementById('characterContainer');
-const yesFemaleBtn = document.getElementById('yesFemale');
-const resultFemaleCharacters = document.getElementById('resultFemale');
-const yesMaleBtn = document.getElementById('yesMale');
-const resultMaleCharacters = document.getElementById('resultMale');
+const resultFemaleCharacters = document.getElementById('funFactFemale');
+const resultMaleCharacters = document.getElementById('funFactMale');
 
 let filtered = dataGhibli;
 let filteredPeople = people;
@@ -77,30 +75,64 @@ function displayCharacterPage(){
 }
 btnCharacters.addEventListener('click', displayCharacterPage);
 
-//Funciones para mostrar contenedores de fun facts 
-function displayFemaleFunFact() {
-  const maleFunFactContainer = document.getElementById('maleFunFact');
-  maleFunFactContainer.style.display = 'none'
+// Función para despliegue de personajes
+function displayCharacters(filmCharacters){
+  filmCharacters.forEach((people) => {
+    const createFigure = document.createElement("figure");
+    const createImg = document.createElement("img");
+    const createName = document.createElement("p");
+    const createAge = document.createElement("p");
+    const createGender = document.createElement("p");
 
-  const femaleFunFactContainer = document.getElementById('femaleFunFact');
-  femaleFunFactContainer.style.display = 'flex';
+    createFigure.setAttribute("class", "characterFigure");
+    createImg.setAttribute("src", people.img);
+    createImg.setAttribute("class", "characterPicture");
+    createName.innerHTML = people.name;
+    createName.setAttribute("class", "characterName");
+    createAge.innerHTML = people.age;
+    createAge.setAttribute("class", "characterInfo");
+    createGender.innerHTML = people.gender;
+    createGender.setAttribute("class", "characterInfo");
+    
+    createFigure.appendChild(createImg);
+    createFigure.appendChild(createName);
+    createFigure.appendChild(createAge);
+    createFigure.appendChild(createGender);
+    characterContainer.appendChild(createFigure);
+  })
 }
+displayCharacters(people);
 
-function displayMaleFunFact() {
-  const femaleFunFactContainer = document.getElementById('femaleFunFact');
-  femaleFunFactContainer.style.display = 'none';
+// Función para despliegue de películas
+function displayFilms(films) {
+  films.forEach((film) => {
+    const createFigure = document.createElement("figure");
+    const createImg = document.createElement("img");
+    const createH3 = document.createElement("h3");
+    const createP = document.createElement("p");
+    const createDescriptionContainer = document.createElement("div");
+    const createDescriptionText = document.createElement("p");
 
-  const maleFunFactContainer = document.getElementById('maleFunFact');
-  maleFunFactContainer.style.display = 'flex'
+    createFigure.setAttribute("class", "filmContainer");
+    createImg.setAttribute("src", film.poster);
+    createImg.setAttribute("class", "filmPoster");
+    createH3.innerHTML = film.title;
+    createH3.setAttribute("class", "filmTitle");
+    createP.innerHTML = film.release_date;
+    createP.setAttribute("class", "filmInformation");
+    createDescriptionContainer.setAttribute("class", "descriptionContainer");
+    createDescriptionText.innerHTML = film.description;
+    createDescriptionText.setAttribute("class", "descriptionText");
+
+    createFigure.appendChild(createImg);
+    createFigure.appendChild(createH3);
+    createFigure.appendChild(createP);
+    movieContainer.appendChild(createFigure);
+    createFigure.appendChild(createDescriptionContainer);
+    createDescriptionContainer.appendChild(createDescriptionText);
+  })
 }
-
-filterByGender.addEventListener("change", () => {
-  if (filterByGender.value === 'Female') {
-    displayFemaleFunFact();
-  } else if (filterByGender.value === 'Male') {
-    displayMaleFunFact();
-  }
-})
+displayFilms(filtered);
 
 //Ordenar películas por más recientes
 function sortByNewestMovies() {
@@ -161,63 +193,31 @@ filterByGender.addEventListener("change", () => {
   displayCharacters(filteredPeople);
 })
 
-// Función para despliegue de personajes
-function displayCharacters(filmCharacters){
-  filmCharacters.forEach((people) => {
-    const createFigure = document.createElement("figure");
-    const createImg = document.createElement("img");
-    const createName = document.createElement("p");
-    const createAge = document.createElement("p");
-    const createGender = document.createElement("p");
+//Funciones para mostrar fun facts 
+function displayFemaleFunFact() {
+  const maleFunFactContainer = document.getElementById('maleFunFact');
+  maleFunFactContainer.style.display = 'none';
 
-    createFigure.setAttribute("class", "characterFigure");
-    createImg.setAttribute("src", people.img);
-    createImg.setAttribute("class", "characterPicture");
-    createName.innerHTML = people.name;
-    createName.setAttribute("class", "characterName");
-    createAge.innerHTML = people.age;
-    createAge.setAttribute("class", "characterInfo");
-    createGender.innerHTML = people.gender;
-    createGender.setAttribute("class", "characterInfo");
-    
-    createFigure.appendChild(createImg);
-    createFigure.appendChild(createName);
-    createFigure.appendChild(createAge);
-    createFigure.appendChild(createGender);
-    characterContainer.appendChild(createFigure);
-  })
+  const femaleFunFactContainer = document.getElementById('femaleFunFact');
+  femaleFunFactContainer.style.display = 'flex';
+
+  resultFemaleCharacters.textContent = ("Did you know! The percentage of female characters in the Ghibli universe is " + Math.ceil((totalCharacterGender(people, 'Female')) *  0.58) + "%" + ".") 
 }
-displayCharacters(people);
 
-// Función para despliegue de películas
-function displayFilms(films) {
-  films.forEach((film) => {
-    const createFigure = document.createElement("figure");
-    const createImg = document.createElement("img");
-    const createH3 = document.createElement("h3");
-    const createP = document.createElement("p");
+function displayMaleFunFact() {
+  const femaleFunFactContainer = document.getElementById('femaleFunFact');
+  femaleFunFactContainer.style.display = 'none';
 
-    createFigure.setAttribute("class", "filmContainer");
-    createImg.setAttribute("src", film.poster);
-    createImg.setAttribute("class", "filmPoster");
-    createH3.innerHTML = film.title;
-    createH3.setAttribute("class", "filmTitle");
-    createP.innerHTML = film.release_date;
-    createP.setAttribute("class", "filmInformation");
+  const maleFunFactContainer = document.getElementById('maleFunFact');
+  maleFunFactContainer.style.display = 'flex';
 
-    createFigure.appendChild(createImg);
-    createFigure.appendChild(createH3);
-    createFigure.appendChild(createP);
-    movieContainer.appendChild(createFigure);
-  })
+  resultMaleCharacters.textContent = ("Did you know! The percentage of Male characters in the Ghibli universe is " + Math.ceil((totalCharacterGender(people, 'Male')) *  0.58) + "%" + ".")
 }
-displayFilms(filtered);
 
-//Crear fun facts
-yesFemaleBtn.addEventListener('click', function(){
-  resultFemaleCharacters.innerHTML = ("The total of female characters are " + totalCharacterGender(people, 'Female') + ".") 
-});
-
-yesMaleBtn.addEventListener('click', function() {
-  resultMaleCharacters.innerHTML = ("The total of male characters are " + totalCharacterGender(people, 'Male') + ".")
-});
+filterByGender.addEventListener("change", () => {
+  if (filterByGender.value === 'Female') {
+    displayFemaleFunFact();
+  } else if (filterByGender.value === 'Male') {
+    displayMaleFunFact();
+  }
+})
