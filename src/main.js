@@ -170,15 +170,15 @@ function displayCharacters(filmCharacters){
     const createAge = document.createElement("p");
     const createGender = document.createElement("p");
 
-    createFigure.setAttribute("class", "filmContainer");
+    createFigure.setAttribute("class", "characterFigure");
     createImg.setAttribute("src", people.img);
-    createImg.setAttribute("class", "filmPoster");
+    createImg.setAttribute("class", "characterPicture");
     createName.innerHTML = people.name;
-    createName.setAttribute("class", "filmTitle");
+    createName.setAttribute("class", "characterName");
     createAge.innerHTML = people.age;
-    createAge.setAttribute("class", "filmInformation");
+    createAge.setAttribute("class", "characterInfo");
     createGender.innerHTML = people.gender;
-    createGender.setAttribute("class", "filmInformation");
+    createGender.setAttribute("class", "characterInfo");
     
     createFigure.appendChild(createImg);
     createFigure.appendChild(createName);

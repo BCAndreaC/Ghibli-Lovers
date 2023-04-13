@@ -89,7 +89,7 @@ main{
 
 .manual-btn{
     border: 2px solid #012B99;
-    padding: 2vh;
+    padding: 1vh;
     border-radius: 18px;
     cursor: pointer;
     transition: 1s;
@@ -199,6 +199,7 @@ li:hover{
     height: 1rem;
     border-radius: 10px;
 }
+/* Fin de menú de hamburguesa */
 
 /* Mensaje de bienvenida */
 .container_welcomeMessage {
@@ -230,7 +231,7 @@ li:hover{
     display: none;
 }
 
-    /* Botón de ordenado y filtrado en página de Movies */
+/* Botón de ordenado y filtrado en página de Movies */
 .sortSelect, .sortCharacters {
     border-radius: 10px 0px 0px 10px;
 }
@@ -256,24 +257,7 @@ li:hover{
     border: none;
 }
 
-    /* Íconos de filtrado y de orden */
-#filterSlider {
-    position: absolute;
-    color: white;
-    margin-top: 1rem;
-    right: 0%;
-    font-size: 2rem;
-}
-
-#sortArrow{
-    position: absolute;
-    color: white;
-    margin-top: .5rem;
-    right: 50%;
-    font-size: 2rem;
-}
-
-    /* Contenedor de películas */
+/* Contenedor de películas */
 .movieContainer {
     display: flex;
     flex-direction: row;
@@ -295,16 +279,14 @@ li:hover{
     width: 24rem;
     height: 24rem;
     object-fit: contain;
-    /* border-radius: 100px; */
     filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.25));
-    /* clip-path: inset(0 15% 0 15% round 15%); */
     margin-bottom: 2rem;
 }
 
 .filmTitle{
     font-size: 2rem;
     color: #012B99;
-    font-weight: 800;
+    font-weight: 700;
 }
 
 .filmInformation{
@@ -329,8 +311,39 @@ li:hover{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    align-content: center;
+    align-content: space-evenly;
     margin: 4% 2%;
+}
+
+/* Tarjetas de personajes */
+.characterFigure{
+    width: 17rem;
+    height: 30rem;
+    display: flex;  
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 3rem;
+}
+
+.characterPicture{
+    width: 15rem;
+    height: 20rem;
+    text-align: center;  
+    object-fit: contain;
+}
+
+.characterName{
+    font-size: 2rem;
+    color: #012B99;
+    font-weight: 700;
+    text-align: center;
+}
+
+.characterInfo{
+    font-size: 2rem;
+    color: #012B99;
+    font-weight: 500;
 }
 
 /* Contenedor de fun facts para cálculo agregado */
